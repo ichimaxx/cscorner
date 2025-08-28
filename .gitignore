@@ -1,0 +1,34 @@
+cat > .gitignore << 'EOF'
+# ===== Java / build =====
+*.class
+*.log
+*.jar
+*.war
+/out/
+/bin/
+/build/
+/target/
+.gradle/
+.mvn/
+
+# ===== IDE =====
+# IntelliJ
+.idea/
+*.iml
+# Eclipse
+.project
+.classpath
+.settings/
+# VS Code
+.vscode/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.tmp
+
+# ===== nie ignoruj źródeł =====
+!src/**/*
+EOF
