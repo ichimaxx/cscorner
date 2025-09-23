@@ -9,7 +9,7 @@ class Zad5_11 {
             new Zad5_11();
         System.gc();                         // 2 prośba o GC
         System.runFinalization();            // 3 prośba o finalizację
-        Thread.sleep(200);                   // 4 daj czas wątkowi finalizera
+        Thread.sleep(200);                   // 4 daj czas skonczyc
     }
 }
 
