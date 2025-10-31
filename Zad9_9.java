@@ -3,10 +3,8 @@ import static myutils.Skrocenie_Print.*;
 enum Note {
 	MIDDLE_C, C_SHARP, B_FLAT;
 }
-class Instrument {
-	void play(Note n) { 
-		println("Instrument.play() " + n);
-	}
+abstract class Instrument {
+	abstract void play(Note n);
 	String what() { 
 		return "Instrument";
 	}
@@ -14,18 +12,12 @@ class Instrument {
 	public String toString() {
 		return what();
 	}
-	void adjust() {
-		print("Adjusting Instrument");
-	}
+	abstract void adjust();
 }
 class Wind extends Instrument {
 	@Override
 	void play(Note n) { 
 		println("Wind.play() " + n);
-	}
-	@Override
-	String what() {
-		return "Wind"; 
 	}
 	@Override
 	void adjust() { 
@@ -38,10 +30,6 @@ class Percussion extends Instrument {
 		println("Percussion.play() " + n);
 	}
 	@Override
-	String what() { 
-		return "Percussion"; 
-	}
-	@Override
 	void adjust() { 
 		print("Adjusting Percussion"); 
 	}
@@ -50,10 +38,6 @@ class Stringed extends Instrument {
 	@Override
 	void play(Note n) { 
 		println("Stringed.play() " + n);
-	}
-	@Override
-	String what() { 
-		return "Stringed"; 
 	}
 	@Override
 	void adjust() { 
@@ -75,34 +59,15 @@ class Woodwind extends Wind {
 	void play(Note n) { 
 		println("Woodwind.play() " + n); 
 	}
-	@Override
-	String what() { 
-		return "Woodwind";
-	}
 }
-public class Zad8_7 {
- /* Doesn’t care about type, so new types
-	added to the system still work right: */
+public class Zad9_9 {
+ // Doesn’t care about type, so new types
+ // added to the system still work right:
 	public static void tune(Instrument i) {
 		println(i);
 		i.play(Note.MIDDLE_C);
 		
 	}
-	static class Bass extends Instrument { 
-		@Override
-		void play(Note n) { 
-			println("Bass.play() " + n);
-		}
-		@Override
-		String what() { 
-			return "Bass"; 
-		}
-		@Override
-		void adjust() { 
-			print("Adjusting Bass"); 
-		}
-	}
-	
 	public static void tuneAll(Instrument[] e) {
 		for(Instrument i : e)
 			tune(i);
@@ -115,7 +80,6 @@ public class Zad8_7 {
 			new Stringed(),
 			new Brass(),
 			new Woodwind(),
-			new Bass()
 			};
 		tuneAll(orchestra);
 	}
