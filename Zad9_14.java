@@ -1,0 +1,84 @@
+import static myutils.Skrocenie_Print.*;
+
+
+interface one {
+	void jeden();
+	void dwa();	
+}
+
+interface two {
+	void trzy();
+	void cztery();
+}
+
+interface three {
+	void piec();
+	void szesc();
+}
+
+interface four extends one, two, three {
+	void siedem();
+}
+
+class Klasapierwsza implements two {
+	@Override
+	public void trzy() { 
+		println("Klasapierwsza.trzy");
+	}
+	@Override
+	public void cztery() {
+		println("Klasapierwsza.cztery");
+	}
+}
+class Klasatrzecia implements three {
+	public void piec() {};
+	public void szesc() {};
+	public void dziewiec() {};
+}
+public class Zad9_14 extends Klasapierwsza implements four {
+	static void a(one e) {
+		e.jeden();
+		e.dwa();
+	}
+	static void b(two f) {
+		f.trzy();
+		f.cztery();
+	}
+	static void c(three g) {
+		g.piec();
+		g.szesc();
+	}
+	@Override
+	public void jeden() {
+		println("Zad9_14.jeden");
+	}
+	@Override	
+	public void dwa() {
+		println("Zad9_14.dwa");
+	}
+	@Override	
+	public void piec() {
+		println("Zad9_14.piec");
+	}
+	@Override	
+	public void szesc() {
+		println("Zad9_14.szesc");
+	}
+	@Override
+	public void siedem() {
+		println("Zad9_14.siedem");
+		
+	}
+	static void d(four h) {
+		h.siedem(); // z interface four
+	}
+	public static void main (String[] args) {
+		three lol = new Klasatrzecia();
+		c(lol);
+		Zad9_14 sim = new Zad9_14();
+		a(sim);
+		b(sim);
+		c(sim);
+		d(sim);
+	}
+}
