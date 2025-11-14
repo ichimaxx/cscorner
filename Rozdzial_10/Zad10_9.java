@@ -18,5 +18,3 @@ public class Zad10_9 {
 		op.speak();
 	}
 }
-		
-	
