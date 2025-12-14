@@ -21,6 +21,6 @@ public class Zad11_16 extends UniqueWords {
 			calosc += liczbasamp;
 			println (w + " ma samoglosek: " + liczbasamp); 
 		}
-		println("suma samoglosek: " + calosc);
+		println("\nsuma samoglosek: " + calosc);
 	}
 }
