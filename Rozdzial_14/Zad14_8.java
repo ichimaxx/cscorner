@@ -6,16 +6,16 @@ Exercise 8: (5) Write a method that takes an object and recursively prints all t
 in that object’s hierarchy. 
 */
 
-abstract class Shape {
+abstract class Shapew {
 	void draw() { System.out.println(this + ".draw()"); }
 }
-class Circle extends Shape {
+class Circlew extends Shapew {
 	public String toString() { return "Circle"; }
 }
-class Square extends Shape {
+class Squarew extends Shapew {
 	public String toString() { return "Square"; }
 }
-class Triangle extends Shape {
+class Trianglew extends Shapew {
 	public String toString() { return "Triangle"; }
 }
 public class Zad14_8{
@@ -31,7 +31,7 @@ public class Zad14_8{
 		}
 	} 
 	public static void main(String[] args) {
-		Object c = new Circle(); // tworzysz obiekt bo tak chce cwiczenie		
+		Object c = new Circlew(); // tworzysz obiekt bo tak chce cwiczenie		
 		Zad14_8 oz = new Zad14_8(); // obiekt zadania14_8
 		oz.getclass(c.getClass());
 		
