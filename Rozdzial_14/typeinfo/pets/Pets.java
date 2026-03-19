@@ -4,8 +4,7 @@ package Rozdzial_14.typeinfo.pets;
 import java.util.*;
 
 public class Pets {
-  public static final PetCreator creator =
-    new LiteralPetCreator();
+  public static final PetCreator creator = new PetCreator2(); // podmienione LiteralPetCreator na PetCreator2 dla dzialania Zad14_15.java
   public static Pet randomPet() {
     return creator.randomPet();
   }
