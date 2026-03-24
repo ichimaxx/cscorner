@@ -1,0 +1,1 @@
+public interface Factory3<T> { T create(); }
