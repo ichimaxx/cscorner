@@ -8,7 +8,7 @@ public class Zad15_10 {
     }
     public static void main(String[] args) {
         Zad15_10 gm = new Zad15_10();
-        gm.f("", 5, "LAST ARG IS STRING"); /
+        gm.f("", 5, "LAST ARG IS STRING");
         gm.f(1, 1.0, "LAST ARG IS STRING");
         gm.f(1.0, 4, "LAST ARG IS STRING");
         gm.f(1.0F, 4., "LAST ARG IS STRING");
