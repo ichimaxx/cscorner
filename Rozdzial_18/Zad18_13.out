@@ -1,0 +1,28 @@
+1: import java.io.*;
+2: import myutils.*;
+3: /*
+4: Exercise 13: (3) Modify BasicFileOutput.java so that it uses LineNumberReader
+5: to keep track of the line count. Note that it’s much easier to just keep track programmatically.
+6: */
+7: public class Zad18_13 {
+8:     static String file = "Zad18_13.out";
+9:     public static void main(String[] args)
+10:             throws IOException {
+11:         BufferedReader in = new BufferedReader(
+12:                 new StringReader(
+13:                         BufferedInputFile.read("Zad18_13.java")));
+14:         PrintWriter out = new PrintWriter(
+15:                 new BufferedWriter(new FileWriter(file)));
+16:         int lineCount = 1;
+17:         LineNumberReader zo = new LineNumberReader(in);
+18:         String s;
+19:         while((s = zo.readLine()) != null ) {
+20:             zo.setLineNumber(lineCount++);
+21:             out.println(zo.getLineNumber() + ": " + s);
+22:         }
+23:         out.close();
+24:         zo.close();
+25:         // Show the stored file:
+26:         System.out.println(BufferedInputFile.read(file));
+27:     }
+28: }

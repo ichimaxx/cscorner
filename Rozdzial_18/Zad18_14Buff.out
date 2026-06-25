@@ -1,0 +1,215 @@
+1: import java.io.BufferedReader;
+2: import java.io.FileReader;
+3: import java.io.IOException;
+4: import java.util.ArrayList;
+5: import java.util.LinkedList;
+6: import java.util.List;
+7: import static myutils.Skrocenie_Print.println;
+8: 
+9: /*
+10: Exercise 11: (2) In the innerclasses/GreenhouseController.java example,
+11: GreenhouseController contains a hard-coded set of events. Change the program so that it
+12: reads the events and their relative times from a text file, ((difficulty level 8): Use a Factory
+13: Method design pattern to build the events—see Thinking in Patterns (with Java) at
+14: www.MindView.net.)
+15: */
+16: 
+17: abstract class Event {
+18:     private long eventTime;
+19:     private String name;
+20:     protected final long delayTime;
+21:     public Event(long delayTime) {
+22:         this.delayTime = delayTime;
+23:         start();
+24:     }
+25:     public void start() { // Allows restarting
+26:         eventTime = System.nanoTime() + delayTime;
+27:     }
+28:     public boolean ready() {
+29:         return System.nanoTime() >= eventTime;
+30:     }
+31:     public abstract void action();
+32: }
+33: class Controller {
+34:     // A class from java.util to hold Event objects:
+35:     private List<Event> eventList = new ArrayList<Event>();
+36:     public void addEvent(Event c) { eventList.add(c); }
+37:     public void run() {
+38:         while(eventList.size() > 0)
+39:             // Make a copy so you're not modifying the list
+40:             // while you're selecting the elements in it:
+41:             for(Event e : new ArrayList<Event>(eventList))
+42:                 if(e.ready()) {
+43:                     System.out.println(e);
+44:                     e.action();
+45:                     eventList.remove(e);
+46:                 }
+47:     }
+48: }
+49: class GreenhouseControls extends Controller {
+50:     private boolean light = false;
+51:     public class LightOn extends Event {
+52:         public LightOn(long delayTime) { super(delayTime); }
+53:         public void action() {
+54:             // Put hardware control code here to
+55:             // physically turn on the light.
+56:             light = true;
+57:         }
+58:         public String toString() { return "Light is on"; }
+59:     }
+60:     public class LightOff extends Event {
+61:         public LightOff(long delayTime) { super(delayTime); }
+62:         public void action() {
+63:             // Put hardware control code here to
+64:             // physically turn off the light.
+65:             light = false;
+66:         }
+67:         public String toString() { return "Light is off"; }
+68:     }
+69:     private boolean water = false;
+70:     public class WaterOn extends Event {
+71:         public WaterOn(long delayTime) { super(delayTime); }
+72:         public void action() {
+73:             // Put hardware control code here.
+74:             water = true;
+75:         }
+76:         public String toString() {
+77:             return "Greenhouse water is on";
+78:         }
+79:     }
+80:     public class WaterOff extends Event {
+81:         public WaterOff(long delayTime) { super(delayTime); }
+82:         public void action() {
+83:             // Put hardware control code here.
+84:             water = false;
+85:         }
+86:         public String toString() {
+87:             return "Greenhouse water is off";
+88:         }
+89:     }
+90:     private String thermostat = "Day";
+91:     public class ThermostatNight extends Event {
+92:         public ThermostatNight(long delayTime) {
+93:             super(delayTime);
+94:         }
+95:         public void action() {
+96:             // Put hardware control code here.
+97:             thermostat = "Night";
+98:         }
+99:         public String toString() {
+100:             return "Thermostat on night setting";
+101:         }
+102:     }
+103:     public class ThermostatDay extends Event {
+104:         public ThermostatDay(long delayTime) {
+105:             super(delayTime);
+106:         }
+107:         public void action() {
+108:             // Put hardware control code here.
+109:             thermostat = "Day";
+110:         }
+111:         public String toString() {
+112:             return "Thermostat on day setting";
+113:         }
+114:     }
+115:     // An example of an action() that inserts a
+116:     // new one of itself into the event list:
+117:     public class Bell extends Event {
+118:         public Bell(long delayTime) { super(delayTime); }
+119:         public void action() {
+120:             addEvent(new Bell(delayTime));
+121:         }
+122:         public String toString() { return "Bing!"; }
+123:     }
+124:     class Restart extends Event {
+125:         private Event[] eventList;
+126: 
+127:         public Restart(long delayTime, Event[] eventList) {
+128:             super(delayTime);
+129:             this.eventList = eventList;
+130:             for (Event e : eventList)
+131:                 addEvent(e);
+132:         }
+133: 
+134:         public void action() {
+135:             for (Event e : eventList) {
+136:                 e.start(); // Rerun each event
+137:                 addEvent(e);
+138:             }
+139:             start(); // Rerun this Event
+140:             addEvent(this);
+141:         }
+142: 
+143:         public String toString() {
+144:             return "Restarting system";
+145:         }
+146:     }
+147:     public static class Terminate extends Event {
+148:         public Terminate(long delayTime) { super(delayTime); }
+149:         public void action() { System.exit(0); }
+150:         public String toString() { return "Terminating";  }
+151:     }
+152: }
+153: public class Zad18_11 {
+154:     public static LinkedList<String> read(String filename) throws IOException {
+155:         // Reading input by lines:
+156:         BufferedReader in = new BufferedReader(new FileReader(filename));
+157:         String s;
+158:         LinkedList<String> zz = new LinkedList<>();
+159:         while ((s = in.readLine()) != null)
+160:             //dodaje każdą linię z pliku do listy
+161:             zz.add(s);
+162:         in.close();
+163:         return zz;
+164:     }
+165: 
+166:     public static void main(String[] args) throws IOException {
+167:         long delay = 12000L * 1000000;
+168:         GreenhouseControls gc = new GreenhouseControls();
+169:         if (args.length <= 0) {
+170:             println("USAGE: java Zad18_11 filename");
+171:             return;
+172:         }
+173:         //lista eventów
+174:         List<Event> events = new ArrayList<Event>();
+175:         for (String line : read(args[0])) {
+176:             //podzielenie listy line na osobne wyrazy
+177:             String[] parts = line.split("\\s+");
+178:             String eventName = parts[0];
+179:             // czas w pliku event.txt jest podany w milisekundach, a Event używa System.nanoTime()
+180:             //dlatego mnożenie przez 1000000
+181:             long eventTime = Long.parseLong(parts[1]) * 1000000;
+182:             //dla każdej linii z pliku sprawdzana jest nazwa eventu, która tworzy odpowiedni obiekt klasy Event
+183:             switch(eventName) {
+184:                 case "BELL":
+185:                     events.add(gc.new Bell(eventTime));
+186:                     break;
+187:                 case "LightOn":
+188:                     events.add(gc.new LightOn(eventTime));
+189:                     break;
+190:                 case "LightOff":
+191:                     events.add(gc.new LightOff(eventTime));
+192:                     break;
+193:                 case "WaterOn":
+194:                     events.add(gc.new WaterOn(eventTime));
+195:                     break;
+196:                 case "WaterOff":
+197:                     events.add(gc.new WaterOff(eventTime));
+198:                     break;
+199:                 case "ThermostatDay":
+200:                     events.add(gc.new ThermostatDay(eventTime));
+201:                     break;
+202:                 case "ThermostatNight":
+203:                     events.add(gc.new ThermostatNight(eventTime));
+204:                     break;
+205:                 default:
+206:                     println("nieznany event: " + eventName);
+207:             }
+208:         }
+209:         //zamiana kontenera eventów na array eventów, aby można było uruchomić z metodą Restart()
+210:         Event[] eventArray = events.toArray(new Event[0]);
+211:         gc.addEvent(gc.new Restart(2000L * 1000000, eventArray));
+212:         gc.addEvent(new GreenhouseControls.Terminate(delay));
+213:         gc.run();
+214:     }
+215: }
