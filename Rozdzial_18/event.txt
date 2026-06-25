@@ -1,0 +1,7 @@
+BELL 1500
+LightOn 300
+LightOff 400
+WaterOn 100
+WaterOff 500
+ThermostatDay 1000
+ThermostatNight 1588
