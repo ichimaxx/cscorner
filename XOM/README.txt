@@ -1,0 +1,63 @@
+XOM is a library. By itself, it doesn't do much of anything. It exists
+only to be used by other programs. It requires Java 1.6 or later.
+
+XOM's Maven group ID is "xom" and its artifact ID is "xom".
+To add a dependency on XOM using Maven, add this dependency element
+to your pom.xml:
+
+  <dependency>
+    <groupId>xom</groupId>
+    <artifactId>xom</artifactId>
+    <version>1.4.6</version>
+  </dependency>
+
+To add a dependency using Gradle:
+
+  dependencies {
+    implementation 'xom:xom:1.4.6'
+  }
+
+If you are not using a build tool like Maven or Gradle, you can install
+XOM manually by placing the XOM JAR archive somewhere in your CLASSPATH.
+This archive is the file named something like xom-1.4.6.jar.
+(The version number may have changed if I've forgotten to update this
+document.) You can put it in your jre/lib/ext directory, add
+xom-1.4.6.jar to your CLASSPATH environment variable, or use the
+-classpath option when invoking javac and java.
+
+To check your download you can run one of the sample programs found in
+the xom-samples.jar file. For instance, nu.xom.samples.PrettyPrinter
+class formats an XML document by inserting and removing white space
+around element boundaries. You can run it from the
+command line like this:
+
+$ java -classpath xom-samples.jar:xom-1.4.6.jar nu.xom.samples.PrettyPrinter filename.xml
+
+Building from Source
+--------------------
+
+If you want to build XOM from source, you need Apache Ant
+1.6 or later. See https://ant.apache.org/. Once Ant is installed, building
+should be as simple as typing "ant compile" or "ant jar" in the xom
+directory. Type "ant help" to see other possible options.
+
+=======================================================================
+XOM is Copyright 2004, 2005, 2009, 2018-2023, 2026 Elliotte Rusty Harold
+   
+   This library is free software; you can redistribute it and/or modify
+   it under the terms of version 2.1 of the GNU Lesser General Public 
+   License as published by the Free Software Foundation.
+   
+   This library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+   GNU Lesser General Public License for more details.
+   
+   You should have received a copy of the GNU Lesser General Public
+   License along with this library. If not, see 
+   <https://www.gnu.org/licenses/>
+   
+You can contact Elliotte Rusty Harold by sending e-mail to
+elharo@ibiblio.org. Please include the word "XOM" in the
+subject line. For more information see https://xom.nu/ 
+or ask a question on the xom-interest mailing list.

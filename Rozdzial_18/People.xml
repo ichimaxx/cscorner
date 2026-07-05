@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<people>
+    <person>
+        <first>Dr. Bunsen</first>
+        <last>Honeydew</last>
+        <address>400 Age Rd</address>
+        <zip>41445</zip>
+        <state>TX</state>
+    </person>
+    <person>
+        <first>Gonzo</first>
+        <last>The Great</last>
+        <address>14141 Boo Cr</address>
+        <zip>54222</zip>
+        <state>CA</state>
+    </person>
+    <person>
+        <first>Phillip J.</first>
+        <last>Fry</last>
+        <address>111 Hot Rd</address>
+        <zip>15111</zip>
+        <state>AR</state>
+    </person>
+</people>
