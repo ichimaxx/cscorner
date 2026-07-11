@@ -2,6 +2,7 @@ package Rozdzial_20;
 import java.lang.annotation.*;
 import java.lang.reflect.*;
 import java.util.*;
+// kompilacja przez: java Rozdzial_20/Zad20_1 Rozdzial_20.Zad20_1
 /*
 Exercise 1: (2) Implement more SQL types in the database example.
 */
