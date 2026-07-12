@@ -31,8 +31,8 @@ public class AtUnit implements ProcessFiles.Strategy {
     try {
       String cName = ClassNameFinder.thisClass(
         BinaryFile.read(cFile));
-      if(!cName.contains("."))
-        return; // Ignore unpackaged classes
+      //if(!cName.contains("."))
+      // return; // Ignore unpackaged classes
       testClass = Class.forName(cName);
     } catch(Exception e) {
       throw new RuntimeException(e);
