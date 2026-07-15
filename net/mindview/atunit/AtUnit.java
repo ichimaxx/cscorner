@@ -63,6 +63,10 @@ public class AtUnit implements ProcessFiles.Strategy {
     }
     for(Method m : testMethods) {
       printnb("  . " + m.getName() + " ");
+      //DODANO ABY URUCHOMIĆ TestNote
+      TestNote note = m.getAnnotation(TestNote.class);
+      if(note != null)
+        printnb("[" + note.value() + "] ");
       try {
         Object testObject = createTestObject(creator);
         boolean success = false;
