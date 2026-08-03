@@ -135,7 +135,7 @@ class Ekipa2 implements Runnable {
 }
 //trzeci etap: kanalizacja
 class Ekipa3 implements Runnable {
-    private HomeQueue zbrojenieQueue, kanalizacjaQueue;
+    private HomeQueue wylanyFundamentQueue, kanalizacjaQueue;
     private Home home;
     //przy tej barierze spotyka się:
     //ekipa3 i KanalizacjaWorker
@@ -144,14 +144,14 @@ class Ekipa3 implements Runnable {
     public Ekipa3(HomeQueue bq, HomeQueue fq, WorkerPool rp){
         kanalizacjaQueue = fq;
         workerPool = rp;
-        zbrojenieQueue = bq;
+        wylanyFundamentQueue = bq;
     }
     public Home home() { return home; }
     public CyclicBarrier barrier() { return barrier; }
     public void run() {
         try {
             while(!Thread.interrupted()) {
-                home = zbrojenieQueue.take();
+                home = wylanyFundamentQueue.take();
                 workerPool.hire3(KanalizacjaWorker.class, this);
                 barrier.await();
                 kanalizacjaQueue.put(home);
