@@ -3,28 +3,28 @@ import static myutils.Skrocenie_Print.*;
 /*Exercise 24: (3) Add a dispose( ) method to the FailingConstructor class and write
 code to properly use this class. */
 
-class NeedsCleanups { // Construction can’t fail
+class NeedsCleanups12_24 { // Construction can’t fail
 	private static long counter = 1;
 	private final long id = counter++;
 	public void dispose() {
 		System.out.println("NeedsCleanups " + id + " disposed");
 	}
 } 
-class ConstructionException extends Exception {} 
+class ConstructionException12_24 extends Exception {}
 
-class FailingConstructors extends NeedsCleanups {
+class FailingConstructors12_24 extends NeedsCleanups12_24 {
 	// Construction can fail:
-	private NeedsCleanups first;
-	private NeedsCleanups second;
+	private NeedsCleanups12_24 first;
+	private NeedsCleanups12_24 second;
 	
-	public FailingConstructors(boolean fail) throws ConstructionException {
+	public FailingConstructors12_24(boolean fail) throws ConstructionException12_24 {
 		println("failing constructor");
-		first = new NeedsCleanups();
+		first = new NeedsCleanups12_24();
 		try {
 			if (fail)
-				throw new ConstructionException();
-			second = new NeedsCleanups();
-		} catch (ConstructionException e) {
+				throw new ConstructionException12_24();
+			second = new NeedsCleanups12_24();
+		} catch (ConstructionException12_24 e) {
 			if (first != null) first.dispose();
 			throw e;
 		}
@@ -40,21 +40,25 @@ class FailingConstructors extends NeedsCleanups {
 
 public class Zad12_24 {
 	public static void main(String[] args) {
-		FailingConstructors fc1 = null;
-		FailingConstructors fc2 = null;
+		FailingConstructors12_24 fc1 = null;
+		FailingConstructors12_24 fc2 = null;
 		try {
-			fc1 = new FailingConstructors(true); // tutaj (true, false) wybieramy czy sie ma konstruktor wywalic i rzucic exception czy nie
+			fc1 = new FailingConstructors12_24(true);
+			// tutaj (true, false) wybieramy czy sie
+			// ma konstruktor wywalic i rzucic exception czy nie
 			println("Uzywam obiekt fc1...");
-		} catch(ConstructionException e) {
+		} catch(ConstructionException12_24 e) {
 			System.out.println("fc 1 construction failed and catched: \nmessage:" + " '" + e.getMessage() + "' " );
 		} finally {
 			if (fc1 != null) 
 				fc1.dispose();
 		}
 		try {
-			fc2 = new FailingConstructors(false); // tutaj (true, false) wybieramy czy sie ma konstruktor wywalic i rzucic exception czy nie
+			fc2 = new FailingConstructors12_24(false);
+			// tutaj (true, false) wybieramy czy
+			// sie ma konstruktor wywalic i rzucic exception czy nie
 			println("Uzywam obiekt fc2...");
-		} catch(ConstructionException e) {
+		} catch(ConstructionException12_24 e) {
 			System.out.println("fc 2 construction failed and catched: \nmessage:" + " '" + e.getMessage() + "' " );
 		} finally {
 			if (fc2 != null) 

@@ -1,11 +1,11 @@
 import java.util.*;
 import static myutils.Skrocenie_Print.*;
 
-class Shape {
+class Shape8_2 {
  public void draw() {}
  public void erase() {}
 }
-class Circle extends Shape { 
+class Circle8_2 extends Shape8_2 {
 	@Override
 	public void draw() { 
 		println("Circle.draw()");
@@ -15,7 +15,7 @@ class Circle extends Shape {
 		println("Circle.erase()"); 
 	}
 }
-class Square extends Shape {
+class Square8_2 extends Shape8_2 {
 	@Override
 	public void draw() {
 		println("Square.draw()"); 
@@ -25,7 +25,7 @@ class Square extends Shape {
 		println("Square.erase()");
 	}
 }
-class Triangle extends Shape {
+class Triangle8_2 extends Shape8_2 {
 	@Override
 	public void draw() {
 		println("Triangle.draw()");
@@ -35,26 +35,26 @@ class Triangle extends Shape {
 		println("Triangle.erase()"); 
 	}
 }
-class RandomShapeGenerator {
+class RandomShapeGenerator8_2 {
 	private Random rand = new Random(47);
-	public Shape next() {
+	public Shape8_2 next() {
 		switch(rand.nextInt(3)) {
 			default:
-			case 0: return new Circle();
-			case 1: return new Square();
-			case 2: return new Triangle();
+			case 0: return new Circle8_2();
+			case 1: return new Square8_2();
+			case 2: return new Triangle8_2();
 		}
 	}
 }
 public class Zad8_2 {
-	private static RandomShapeGenerator gen = new RandomShapeGenerator();
+	private static RandomShapeGenerator8_2 gen = new RandomShapeGenerator8_2();
 	public static void main(String[] args) {
-		Shape[] s = new Shape[9];
+		Shape8_2[] s = new Shape8_2[9];
 		// Fill up the array with shapes:
 		for(int i = 0; i < s.length; i++)
 			s[i] = gen.next();
 		// Make polymorphic method calls:
-		for(Shape shp : s)
+		for(Shape8_2 shp : s)
 			shp.draw();
 	}
 } 
