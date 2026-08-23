@@ -4,12 +4,4 @@ Name: Rozdzial_22/manifest_35/Frog.class
 Java-Bean: True
 
 Name: Rozdzial_22/manifest_35/BangBean2.class
-
-
-
-
-
-
-
-
 Java-Bean: True

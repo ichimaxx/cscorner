@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+
+Name: Rozdzial_22/Valve/Valve.class
+Java-Bean: True
