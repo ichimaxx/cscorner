@@ -1,3 +1,5 @@
+package Rozdzial_2;
+
 class Zad2_11{
 int liczbaCalkowitaKolorow;
 void zmienOdcienKoloru(int nowyOdcien) {

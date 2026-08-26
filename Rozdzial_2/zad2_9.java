@@ -1,3 +1,5 @@
+package Rozdzial_2;
+
 public class zad2_9
 {
 

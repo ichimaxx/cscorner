@@ -1,4 +1,7 @@
-public class zad2_7
+/*
+Exercise 7: (1) Turn the Incrementable code fragments into a working program.
+*/
+public class Zad2_7
 {
 static int i = 47;
 
@@ -7,6 +10,6 @@ i++;
 System.out.println("i zwiekszone o 1 to = " + i + " " +i );}
 
 	public static void main (String[]args) {
-	zad2_7.incr();
+		Zad2_7.incr();
 	}
 }

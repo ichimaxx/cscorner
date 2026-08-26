@@ -1,5 +1,8 @@
 import java.util.*;
-
+/*
+Exercise 1: (2) Create a class containing an int and a char that are not initialized, and
+print their values to verify that Java performs default initialization.
+ */
 public class nicnierobi
 {
 	int d = 3;

@@ -1,5 +1,5 @@
 /**
- * Klasa zad2 służy do wyświetlania powitania w konsoli.
+ * Klasa Rozdzial_2.zad2 służy do wyświetlania powitania w konsoli.
  * <p>
  * Tworzy obiekt, który łączy dwa napisy i wypisuje je na standardowym wyjściu.
  * </p>
@@ -20,7 +20,7 @@ public class zad2_2 {
     private String a = "świecie!";
 
     /**
-     * Konstruktor klasy zad2.
+     * Konstruktor klasy Rozdzial_2.zad2.
      * <p>
      * Tworzy instancję klasy i wypisuje powitanie na standardowym wyjściu.
      * </p>
@@ -32,7 +32,7 @@ public class zad2_2 {
     /**
      * Metoda główna programu.
      * <p>
-     * Uruchamia aplikację, tworząc nową instancję klasy zad2.
+     * Uruchamia aplikację, tworząc nową instancję klasy Rozdzial_2.zad2.
      * </p>
      *
      * @param args argumenty wiersza poleceń (niewykorzystane)

@@ -1,3 +1,5 @@
+package Rozdzial_2;
+
 public class zad2_10
 {
 	public static void main(String args[]){

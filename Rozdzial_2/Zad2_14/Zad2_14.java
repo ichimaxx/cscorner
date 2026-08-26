@@ -1,3 +1,5 @@
+import Rozdzial_2.zad2_10;
+
 /**klasowy komentasz
 *tu jest poczontek zadania 
 *@version moja piersza
@@ -8,10 +10,10 @@ public class Zad2_14
 {
 	private String message;
 	/**
-     * Konstruktor domyślny klasy Zad2_14. (jest to tu po to zeby sie javadoc nie przypierdalal ze tego nie ma)
+     * Konstruktor domyślny klasy Rozdzial_2.Zad2_14. (jest to tu po to zeby sie javadoc nie przypierdalal ze tego nie ma)
      */
     public Zad2_14() {
-		message = "Siema w Zad2_14!";
+		message = "Siema w Rozdzial_2.Zad2_14!";
         // Kod inicjalizujący – przypisanie wartości początkowych do pól
     }
 	/**komentasz wariablowy
@@ -30,7 +32,7 @@ public class Zad2_14
 	}
 	else	
 	{
-	System.out.println("nie podano kurwa argumentuw, jak chcesz zeby cosik pokzalo napisz po javac Zad2_14 TRZY argumenty np JEBAC DISA KURWE");
+	System.out.println("nie podano kurwa argumentuw, jak chcesz zeby cosik pokzalo napisz po javac Rozdzial_2.Zad2_14 TRZY argumenty np JEBAC DISA KURWE");
 	}
 }
 }
