@@ -5,7 +5,7 @@
 Bug reports are welcome through the [GitHub issue tracker](https://github.com/elharo/xom/issues).
 
 When filing a bug, please include:
-- A code fragment or JUnit test that demonstrates the problem
+- Rozdzial_7.A code fragment or JUnit test that demonstrates the problem
 - The Java version and operating system you are running
 
 All fixes are made on the latest release. Patches are not released for earlier versions without a support contract.

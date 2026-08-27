@@ -1,6 +1,10 @@
 //: object/Zad2_12.java
 import java.util.*;
-
+/*
+Exercise 12: (2) Find the code for the second version of HelloDate.java, which is the
+simple comment documentation example. Execute Javadoc on the file and view the results
+with your Web browser.
+*/
 /** Pierwszy przykladowy program z 'Thinking in Java'.
 *Wyswietla ciag i dzisiejsza date.
 *@author Bruce Eckel

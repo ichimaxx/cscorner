@@ -18,13 +18,13 @@ RELAX NG?
 add an XPath based NodeFactory that only instantiates nodes that
 satisfy a certain pattern
 
-A util package with the most useful samples and contribs
+Rozdzial_7.A util package with the most useful samples and contribs
 
 Do Serializer and canonicalizer need setOutputStream methods?
 
 should Builder have an option to cache all external entities so it doesn't keep reloading them, perhaps via a SAX EntityResolver.
 
-A getAttributeValueInScope() method that searches up the tree for the nearest 
+Rozdzial_7.A getAttributeValueInScope() method that searches up the tree for the nearest
 ancestor element with the specified attribute. This would be useful for xml:lang, xml:space, and many other cases!!!!
 
 Should Builder/NodeFactory have a build(Document) method that allows one to pass an existing document through a node factory without reserializing? 
@@ -85,7 +85,7 @@ Should XSLTransform have a constructor that takes a TrAX
 Templates or Transformer object to allow
 additional properties to be configured
 
-A FastSerializer that does no indenting, no line-breaking, no character sets
+Rozdzial_7.A FastSerializer that does no indenting, no line-breaking, no character sets
 except UTF-8 and UTF-16, no normalization, and does not use TextWriter
 
 consider using a WeakHashMap to hold all mappings of nodes to base URIs
@@ -112,7 +112,7 @@ methods rather than static????
 would it be possible to get a minimal interoperable subset of Big5, SJIS, etc
 and escape all non-interoperable characters?
 
-A streaming serializer based on a  NodeFactory that can serialize arbitrarily large documents without having the entire document in memory
+Rozdzial_7.A streaming serializer based on a  NodeFactory that can serialize arbitrarily large documents without having the entire document in memory
 
 should I synchronize a single static TransformerFactory object inside XSLTransform?
 
@@ -361,7 +361,7 @@ Done 1.1b2:
 Child nodes and attributes are now stored directly in arrays without an intermediary list.
 This saves some memory.
 
-A few bug fixes, especially in XPath
+Rozdzial_7.A few bug fixes, especially in XPath
 
 
 ===============
@@ -404,7 +404,7 @@ Various bug fixes in Jaxen
 Done 1.1a1:
 ===============
 
-A few small speed ups
+Rozdzial_7.A few small speed ups
 
 Some bug fixes in XOMTestCase
 
@@ -415,7 +415,7 @@ Done 1.1d6:
 The primary JAR file now bundles Jaxen so that in Java 1.4 and later the only
 thing that needs to be on the classpath is xom-1.1d6.jar (provided you don't use NFC in the serializer)
 
-A setParameter method in XSLTransform
+Rozdzial_7.A setParameter method in XSLTransform
 
 All items in a Nodes must now be non-null
 
@@ -510,7 +510,7 @@ Done 1.0b8/RC2:
 
 The TagSoup and servlet JARs are no longer bundled. They're not needed to run XOM, just for one of the samples and for the JavaDoc
 
-A few more optimizations to speed up the checking of namespace URIs, and a variety of other operations.
+Rozdzial_7.A few more optimizations to speed up the checking of namespace URIs, and a variety of other operations.
 
 ===============
 Done 1.0b7:
@@ -1003,7 +1003,7 @@ subresource as resource errors, rather than including nothing.
 xml:base attributes added to XIncluded elements no longer 
 have fragment IDs
 
-A couple more XPointer syntax errors are now detected when XIncluding
+Rozdzial_7.A couple more XPointer syntax errors are now detected when XIncluding
 
 In XIncludeException the getRootCause and setRootCause() methods have
 been replaced by initCause() and getCause().
@@ -1392,7 +1392,7 @@ Added support for the following character sets to Serializer:
     ISO-8859-15
     ISO-8859-16
 
-Note that although XOM supports them, not all Java virtual machines do.
+Rozdzial_8.Note that although XOM supports them, not all Java virtual machines do.
 
 Serializer matches character set names case-insensitively as specified in the
 XML specification.

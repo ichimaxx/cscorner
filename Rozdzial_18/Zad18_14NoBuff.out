@@ -31,7 +31,7 @@
 31:     public abstract void action();
 32: }
 33: class Controller {
-34:     // A class from java.util to hold Event objects:
+34:     // Rozdzial_7.A class from java.util to hold Event objects:
 35:     private List<Event> eventList = new ArrayList<Event>();
 36:     public void addEvent(Event c) { eventList.add(c); }
 37:     public void run() {

@@ -1,4 +1,4 @@
-//: net/mindview/simple/Vector.java
+//: net/mindview/simple/Vectorx.java
 // Creating a package.
 package net.mindview.simple;
 

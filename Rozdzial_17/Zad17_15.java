@@ -4,10 +4,10 @@ import static myutils.Skrocenie_Print.*;
 /*
 Exercise 15: (1) Repeat Exercise 13 using a SlowMap.
 */
-class MapEntry<K,V> implements Map.Entry<K,V> {
+class MapEntry_4<K,V> implements Map.Entry<K,V> {
     private K key;
     private V value;
-    public MapEntry(K key, V value) {
+    public MapEntry_4(K key, V value) {
         this.key = key;
         this.value = value;
     }
@@ -23,8 +23,8 @@ class MapEntry<K,V> implements Map.Entry<K,V> {
                 (value==null ? 0 : value.hashCode());
     }
     public boolean equals(Object o) {
-        if(!(o instanceof MapEntry)) return false;
-        MapEntry me = (MapEntry)o;
+        if(!(o instanceof MapEntry_4)) return false;
+        MapEntry_4 me = (MapEntry_4)o;
         return
                 (key == null ?
                         me.getKey() == null : key.equals(me.getKey())) &&
@@ -57,7 +57,7 @@ public class Zad17_15 <K,V> extends AbstractMap<K,V> {
         Iterator<K> ki = keys.iterator();
         Iterator<V> vi = values.iterator();
         while(ki.hasNext())
-            set.add(new MapEntry<K,V>(ki.next(), vi.next()));
+            set.add(new MapEntry_4<K,V>(ki.next(), vi.next()));
         return set;
     }
     public static void main(String[] args) {

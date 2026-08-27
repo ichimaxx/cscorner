@@ -29,7 +29,7 @@
 <!ENTITY gt      "&#62;"> <!--  greater-than sign, U+003E ISOnum -->
 <!ENTITY apos	 "&#39;"> <!--  apostrophe mark, U+0027 ISOnum -->
 
-<!-- Latin Extended-A -->
+<!-- Latin Extended-Rozdzial_7.A -->
 <!ENTITY OElig   "&#338;"> <!--  latin capital ligature OE,
                                     U+0152 ISOlat2 -->
 <!ENTITY oelig   "&#339;"> <!--  latin small ligature oe, U+0153 ISOlat2 -->

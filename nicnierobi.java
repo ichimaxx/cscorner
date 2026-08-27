@@ -7,8 +7,8 @@ public class nicnierobi
 {
 	int d = 3;
 	int b;
-	String c = "chuj";
-	String a = "iksde";
+	String c = "Rozdzial_3.chuj";
+	String a = "Rozdzial_3.iksde";
 	public nicnierobi(){
 		System.out.println("b=" +d);
 	System.out.println("c=" +a);}

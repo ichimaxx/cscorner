@@ -1,4 +1,7 @@
-package Rozdzial_2;
+/*
+Exercise 11: (1) Turn the AllTheColorsOfTheRainbow example into a program that
+compiles and runs.
+*/
 
 class Zad2_11{
 int liczbaCalkowitaKolorow;

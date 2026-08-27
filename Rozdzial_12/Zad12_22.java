@@ -10,14 +10,14 @@ class NeedsCleanup { // Construction can’t fail
 		System.out.println("NeedsCleanup " + id + " disposed");
 	}
 } 
-class ConstructionException extends Exception {} 
+class ConstructionException_1 extends Exception {}
 
 class FailingConstructor extends NeedsCleanup {
 	// Construction can fail:
-	public FailingConstructor(boolean fail) throws ConstructionException {
+	public FailingConstructor(boolean fail) throws ConstructionException_1 {
 		println("failing constructor");
 		if (fail) {
-			throw new ConstructionException();
+			throw new ConstructionException_1();
 		}
 	}
 	public void dispose() {
@@ -31,7 +31,7 @@ public class Zad12_22 {
 		try {
 			fc = new FailingConstructor(true); // tutaj (true, false) wybieramy czy sie ma konstruktor wywalic i rzucic exception czy nie
 			println("Uzywam obiekt...");
-		} catch(ConstructionException e) {
+		} catch(ConstructionException_1 e) {
 			System.out.println("construction failed and catched: \nmessage:" + " '" + e.getMessage() + "' " );
 		} finally {
 			if (fc != null) 

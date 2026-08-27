@@ -12,7 +12,7 @@ Exercise 26: (5) Modify the previous exercise so that multiple sine wave panels 
 created within the application. The number of sine wave panels should be controlled by
 command-line parameters.
 */
-class SineDraw5 extends JPanel {
+class SineDraw7 extends JPanel {
     //stała określająca liczbę punktów używanych do rysowania
     public static final int SCALEFACTOR = 1000;
     // liczba cykli sinusoidy
@@ -28,7 +28,7 @@ class SineDraw5 extends JPanel {
     //tablica przechowująca wartości Y przeliczone na współrzędne panelu
     public int[] pts;
     //konstruktor z timerem
-    public SineDraw5() {
+    public SineDraw7() {
         //uruchamia TimerTask po 100ms i powtarza go co 100ms
         Timer timer = new Timer();
         timer.schedule(task, 100, 100);
@@ -91,7 +91,7 @@ class SineDraw5 extends JPanel {
 }
 public class Zad22_26 extends JFrame {
     //tablica przechowująca wszystkie utworzone panele sinusoid
-    private SineDraw5[] sines;
+    private SineDraw7[] sines;
     //panel z opisem i sliderem predkosci
     private JPanel speedPanel = new JPanel();
     private JLabel speedLabel = new JLabel("Prędkość:");
@@ -105,17 +105,17 @@ public class Zad22_26 extends JFrame {
         speedPanel.add(speedLabel);
         speedPanel.add(adjustSpeed);
         //utworzenie tablicy o rozmiarze zależnym od argumentu programu
-        sines = new SineDraw5[ilePaneli];
+        sines = new SineDraw7[ilePaneli];
         //utworzenie wymaganej liczby paneli sinusoid
         for(int i = 0; i < ilePaneli; i++) {
-            sines[i] = new SineDraw5();
+            sines[i] = new SineDraw7();
             //obramowanie, aby rozróżnić panele
             sines[i].setBorder(BorderFactory.createLineBorder(Color.black));
             sinePanel.add(sines[i]);
         }
         adjustSpeed.addChangeListener(new ChangeListener() {
             public void stateChanged(ChangeEvent e) {
-                for(SineDraw5 s : sines) {
+                for(SineDraw7 s : sines) {
                     s.predkosc = adjustSpeed.getValue();
                 }
             }

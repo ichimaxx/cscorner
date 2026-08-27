@@ -1,6 +1,6 @@
 import static myutils.Skrocenie_Print.*;
 
-interface Selector {
+interface Selector_4 {
 	boolean end();
 	Object current();
 	void next();
@@ -15,7 +15,7 @@ public class Zad10_22 {
 		if(next < items.length)
 		items[next++] = x;
 	}
-	private class SequenceSelector implements Selector {
+	private class SequenceSelector implements Selector_4 {
 		private int i = 0;
 		@Override
 		public boolean end() { 
@@ -29,8 +29,8 @@ public class Zad10_22 {
 		public void next() { 
 			if(i < items.length) i++; 
 		}
-		Selector reverseSelector() {
-			return new Selector() {
+		Selector_4 reverseSelector() {
+			return new Selector_4() {
 				private int i = items.length - 1; // start od ostatniego indeksu czyli np 9 przy rozmiarrze 10
 				@Override
 				public boolean end() { 
@@ -46,25 +46,25 @@ public class Zad10_22 {
 				}
 			};
 		}
-		public Selector rev() {
+		public Selector_4 rev() {
 		return reverseSelector();
 	}
 	}
-	public Selector selector() {
+	public Selector_4 selector() {
 		return new SequenceSelector();
 	}
 	public static void main(String[] args) {
 		Zad10_22 sequence = new Zad10_22(10);
 		for(int i = 0; i < 10; i++)
 		sequence.add(Integer.toString(i));
-		Selector selector = sequence.selector();
+		Selector_4 selector = sequence.selector();
 		while(!selector.end()) {
 		System.out.print(selector.current() + " ");
 		selector.next();
 		}
 		println("");
 		Zad10_22.SequenceSelector go = sequence.new SequenceSelector();
-		Selector revselector = go.rev();
+		Selector_4 revselector = go.rev();
 		while(!revselector.end()) {
 		System.out.print(revselector.current() + " ");
 		revselector.next();

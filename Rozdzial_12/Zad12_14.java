@@ -2,7 +2,7 @@ import java.util.*;
 import static myutils.Skrocenie_Print.*;
 /*Exercise 14: (2) Show that OnOffSwitch.java can fail by throwing a
 RuntimeException inside the try block. */
-class Switch {
+class Switch_2 {
 	private boolean state = false;
 	public boolean read() { 
 		return state; 
@@ -20,23 +20,23 @@ class Switch {
 	}
 } ///:~
 //: exceptions/OnOffException1.java
-class OnOffException1 extends Exception {}
-class OnOffException2 extends Exception {}
+class OnOffException1_2 extends Exception {}
+class OnOffException2_2 extends Exception {}
 
 public class Zad12_14 {
-	private static Switch sw = new Switch();
+	private static Switch_2 sw = new Switch_2();
 	public static void f()
-		throws OnOffException1,OnOffException2 {}
+		throws OnOffException1_2,OnOffException2_2 {}
 	public static void main(String[] args) {
 		try {
 			sw.on();
 			// Code that can throw exceptions...
 			f();
 			throw new RuntimeException();
-		} catch(OnOffException1 e) {
+		} catch(OnOffException1_2 e) {
 			System.out.println("OnOffException1");
 			sw.off();
-		} catch(OnOffException2 e) {
+		} catch(OnOffException2_2 e) {
 			System.out.println("OnOffException2");
 			sw.off();
 		} /*finally {

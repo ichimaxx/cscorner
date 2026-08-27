@@ -4,14 +4,14 @@ import java.util.concurrent.locks.*;
 /*
 Exercise 27: (2) Modify Restaurant.java to use explicit Lock and Condition objects.
 */
-class Meal2 {
+class Meal3 {
     private final int orderNum;
-    public Meal2(int orderNum) { this.orderNum = orderNum; }
+    public Meal3(int orderNum) { this.orderNum = orderNum; }
     public String toString() { return "Meal " + orderNum; }
 }
-class WaitPerson2 implements Runnable {
+class WaitPerson3 implements Runnable {
     private Zad21_27 restaurant;
-    public WaitPerson2(Zad21_27 r) { restaurant = r; }
+    public WaitPerson3(Zad21_27 r) { restaurant = r; }
     public void run() {
         try {
             while (!Thread.interrupted()) {
@@ -36,10 +36,10 @@ class WaitPerson2 implements Runnable {
         }
     }
 }
-class Chef2 implements Runnable {
+class Chef3 implements Runnable {
     private Zad21_27 restaurant;
     private int count = 0;
-    public Chef2(Zad21_27 r) { restaurant = r; }
+    public Chef3(Zad21_27 r) { restaurant = r; }
     public void run() {
         try {
             while(!Thread.interrupted()) {
@@ -57,7 +57,7 @@ class Chef2 implements Runnable {
                 println("Order up! ");
                 restaurant.lock.lock();
                 try {
-                    restaurant.meal = new Meal2(count);
+                    restaurant.meal = new Meal3(count);
                     restaurant.condition.signalAll();
                 } finally {
                     restaurant.lock.unlock();
@@ -72,10 +72,10 @@ class Chef2 implements Runnable {
 public class Zad21_27 {
     Lock lock = new ReentrantLock();
     Condition condition = lock.newCondition();
-    Meal2 meal;
+    Meal3 meal;
     ExecutorService exec = Executors.newCachedThreadPool();
-    WaitPerson2 waitPerson = new WaitPerson2(this);
-    Chef2 chef = new Chef2(this);
+    WaitPerson3 waitPerson = new WaitPerson3(this);
+    Chef3 chef = new Chef3(this);
     public Zad21_27() {
         exec.execute(chef);
         exec.execute(waitPerson);

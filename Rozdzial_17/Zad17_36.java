@@ -10,10 +10,10 @@ so that it performs a sort( ) after each pair is entered, and modify get( ) to u
 Collections.binarySearch( ) to look up the key. Compare the performance of the new
 version with the old ones.
 */
-class MapEntry<K,V> implements Map.Entry<K,V> {
+class MapEntry_6<K,V> implements Map.Entry<K,V> {
     private K key;
     private V value;
-    public MapEntry(K key, V value) {
+    public MapEntry_6(K key, V value) {
         this.key = key;
         this.value = value;
     }
@@ -30,8 +30,8 @@ class MapEntry<K,V> implements Map.Entry<K,V> {
                 (value==null ? 0 : value.hashCode());
     }
     public boolean equals(Object o) {
-        if(!(o instanceof MapEntry)) return false;
-        MapEntry me = (MapEntry)o;
+        if(!(o instanceof MapEntry_6)) return false;
+        MapEntry_6 me = (MapEntry_6)o;
         return
                 (key == null ?
                         me.getKey() == null : key.equals(me.getKey())) &&
@@ -52,12 +52,12 @@ class SlowMapSingleArray<K extends Comparable<K>,V> extends AbstractMap<K, V> {
         for (int i = 0; i < wejscia.size(); i++) {
             Map.Entry<K,V> raz = wejscia.get(i);
             if (raz.getKey().equals(key)) {
-                wejscia.set(i, new MapEntry<K,V>(key,value));
+                wejscia.set(i, new MapEntry_6<K,V>(key,value));
                 Collections.sort(wejscia, entryComparator);
                 return oldValue;
             }
         }
-        wejscia.add(new MapEntry<K,V>(key, value));
+        wejscia.add(new MapEntry_6<K,V>(key, value));
         Collections.sort(wejscia, entryComparator);
         return oldValue;
     }
@@ -65,7 +65,7 @@ class SlowMapSingleArray<K extends Comparable<K>,V> extends AbstractMap<K, V> {
     public V get(Object key) {
         //generuje tymczasowy Entry z szukanym kluczem, value nie ma znaczenia, bo comparator porównuje tylko klucze
         //get() w interfejsie Map przyjmuje Object, dlatego tutaj rzutuje się key na K
-        Map.Entry<K,V> s = new MapEntry<K,V>((K) key, null);// The old value or null
+        Map.Entry<K,V> s = new MapEntry_6<K,V>((K) key, null);// The old value or null
         //szuka binarnie po posortowanej liście,
         int index = Collections.binarySearch(wejscia, s, entryComparator);
         if (index < 0) {
@@ -117,7 +117,7 @@ class SlowMapSingleArray<K extends Comparable<K>,V> extends AbstractMap<K, V> {
         };
     }
 }
-class SlowMapFixed<K,V> extends AbstractMap<K,V> {
+class SlowMapFixed_1<K,V> extends AbstractMap<K,V> {
     private List<K> keys = new ArrayList<K>();
     private List<V> values = new ArrayList<V>();
 
@@ -165,7 +165,7 @@ class SlowMapFixed<K,V> extends AbstractMap<K,V> {
 
                     public Map.Entry<K, V> next() {
                         last = index;
-                        MapEntry<K, V> k = new MapEntry<K, V>(keys.get(index), values.get(index));
+                        MapEntry_6<K, V> k = new MapEntry_6<K, V>(keys.get(index), values.get(index));
                         index++;
                         return k;
                     }
@@ -184,7 +184,7 @@ class SlowMapFixed<K,V> extends AbstractMap<K,V> {
     }
 }
 // nienaprawiona SlowMap, która zwraca za każdym razem z użyciem entrySet kopię mapy
-class SlowMapNotFixed<K,V> extends AbstractMap<K,V> {
+class SlowMapNotFixed_1<K,V> extends AbstractMap<K,V> {
     private List<K> keys = new ArrayList<K>();
     private List<V> values = new ArrayList<V>();
     public V put(K key, V value) {
@@ -206,7 +206,7 @@ class SlowMapNotFixed<K,V> extends AbstractMap<K,V> {
         Iterator<K> ki = keys.iterator();
         Iterator<V> vi = values.iterator();
         while(ki.hasNext())
-            set.add(new MapEntry<K,V>(ki.next(), vi.next()));
+            set.add(new MapEntry_6<K,V>(ki.next(), vi.next()));
         return set;
     }
 }
@@ -259,8 +259,8 @@ public class Zad17_36 {
         Tester.run(new WeakHashMap<Integer,Integer>(), tests);
         Tester.run(new Hashtable<Integer,Integer>(), tests);
         Tester.run(new SlowMapSingleArray<Integer,Integer>(), tests);
-        Tester.run(new SlowMapFixed<Integer,Integer>(), tests); // naprawiona SlowMap
-        Tester.run(new SlowMapNotFixed<Integer,Integer>(), tests); // nie naprawiona SlowMap
+        Tester.run(new SlowMapFixed_1<Integer,Integer>(), tests); // naprawiona SlowMap
+        Tester.run(new SlowMapNotFixed_1<Integer,Integer>(), tests); // nie naprawiona SlowMap
     }
 }
 

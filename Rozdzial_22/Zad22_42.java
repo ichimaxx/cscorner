@@ -11,7 +11,7 @@ import java.util.*;
 Exercise 42: (4) Modify swt/ColorBoxes.java so that it begins by sprinkling points
 ("stars") across the canvas, then randomly changes the colors of those "stars."
 */
-class CBox extends Canvas implements Runnable {
+class CBox_2 extends Canvas implements Runnable {
     //liczba "gwiazd" na każdym Canvas
     private int iloscGwiazd = 20;
     //każda gwiazda posiada własny kolor zapisany jako RGB
@@ -54,7 +54,7 @@ class CBox extends Canvas implements Runnable {
     //czas pomiędzy zmianami kolorów
     private int pause;
     //PaintListener odpowiada za rysowanie gwiazd na Canvas
-    public CBox(Composite parent, int pause) {
+    public CBox_2(Composite parent, int pause) {
         super(parent, SWT.NONE);
         this.pause = pause;
         addPaintListener(new CBoxPaintListener());
@@ -97,7 +97,7 @@ public class Zad22_42 implements SWTApplication  {
         //zadaniem wykonywanym przez pulę wątków daemon
         ExecutorService exec = new DaemonThreadPoolExecutor();
         for(int i = 0; i < (grid * grid); i++) {
-            final CBox cb = new CBox(parent, pause);
+            final CBox_2 cb = new CBox_2(parent, pause);
             cb.setLayoutData(new GridData(GridData.FILL_BOTH));
             exec.execute(cb);
         }

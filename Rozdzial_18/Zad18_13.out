@@ -2,7 +2,7 @@
 2: import myutils.*;
 3: /*
 4: Exercise 13: (3) Modify BasicFileOutput.java so that it uses LineNumberReader
-5: to keep track of the line count. Note that it’s much easier to just keep track programmatically.
+5: to keep track of the line count. Rozdzial_8.Note that it’s much easier to just keep track programmatically.
 6: */
 7: public class Zad18_13 {
 8:     static String file = "Zad18_13.out";

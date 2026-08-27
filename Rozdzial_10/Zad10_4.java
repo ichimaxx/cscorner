@@ -1,6 +1,6 @@
 import static myutils.Skrocenie_Print.*;
 
-interface Selector {
+interface Selector_2 {
 	boolean end();
 	Object current();
 	void next();
@@ -21,7 +21,7 @@ public class Zad10_4 {
 		if(next < items.length)
 		items[next++] = x;
 	}
-	private class SequenceSelector implements Selector {
+	private class SequenceSelector implements Selector_2 {
 		private int i = 0;
 		public boolean end() { 
 			return i == items.length; 
@@ -36,14 +36,14 @@ public class Zad10_4 {
 			return Zad10_4.this;
 		}
 	}	
-	public Selector selector() {
+	public Selector_2 selector() {
 		return new SequenceSelector();
 	}
 	public static void main(String[] args) {
 		Zad10_4 sequence = new Zad10_4(10);
 		for(int i = 0; i < 10; i++)
 			sequence.add(Integer.toString(i));
-			Selector selector = sequence.selector();
+		Selector_2 selector = sequence.selector();
 		while(!selector.end()) {
 			System.out.print(selector.current() + " ");
 			selector.next();

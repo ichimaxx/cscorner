@@ -1,6 +1,6 @@
 import static myutils.Skrocenie_Print.*;
 
-interface Selector {
+interface Selector_5 {
 	boolean end();
 	Object current();
 	void next();
@@ -25,7 +25,7 @@ public class Zad10_2 {
 			return k;
 		}
 	}	
-	private class SequenceSelector implements Selector {
+	private class SequenceSelector implements Selector_5 {
 		private int i = 0;
 		public boolean end() { 
 			return i == items.length; 
@@ -37,14 +37,14 @@ public class Zad10_2 {
 			if(i < items.length) i++; 
 		}
 	}
-	public Selector selector() {
+	public Selector_5 selector() {
 		return new SequenceSelector();
 	}
 	public static void main(String[] args) {
 		Zad10_2 sequence = new Zad10_2(15);
 		for(int i = 0; i < 10; i++)
 			sequence.add(Integer.toString(i));
-		Selector selector = sequence.selector();
+		Selector_5 selector = sequence.selector();
 		sequence.add(sequence.new Koniec("koniec23"));
 		sequence.add(sequence.new Koniec("a pozniej"));
 		sequence.add(sequence.new Koniec("inny koniec"));

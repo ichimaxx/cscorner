@@ -1,1 +1,1 @@
-<?xml version="1.0"?> <xsl:stylesheet version="1.0"                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">  <xsl:template match="person">    <p>A Person</p>  </xsl:template></xsl:stylesheet>
+<?xml version="1.0"?> <xsl:stylesheet version="1.0"                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">  <xsl:template match="person">    <p>Rozdzial_7.A Person</p>  </xsl:template></xsl:stylesheet>

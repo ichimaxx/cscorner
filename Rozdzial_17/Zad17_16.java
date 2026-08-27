@@ -7,10 +7,10 @@ Exercise 16: (7) Apply the tests in Maps.java to SlowMap to verify that it works
 anything in SlowMap that doesn’t work correctly.
 */
 
-class MapEntry<K,V> implements Map.Entry<K,V> {
+class MapEntry_3<K,V> implements Map.Entry<K,V> {
     private K key;
     private V value;
-    public MapEntry(K key, V value) {
+    public MapEntry_3(K key, V value) {
         this.key = key;
         this.value = value;
     }
@@ -27,8 +27,8 @@ class MapEntry<K,V> implements Map.Entry<K,V> {
                 (value==null ? 0 : value.hashCode());
     }
     public boolean equals(Object o) {
-        if(!(o instanceof MapEntry)) return false;
-        MapEntry me = (MapEntry)o;
+        if(!(o instanceof MapEntry_3)) return false;
+        MapEntry_3 me = (MapEntry_3)o;
         return
                 (key == null ?
                         me.getKey() == null : key.equals(me.getKey())) &&
@@ -105,7 +105,7 @@ public class Zad17_16<K,V> extends AbstractMap<K,V> {
                     }
                     public Map.Entry<K, V> next() {
                         last = index;
-                        MapEntry<K,V> k = new MapEntry<K,V>(keys.get(index), values.get(index));
+                        MapEntry_3<K,V> k = new MapEntry_3<K,V>(keys.get(index), values.get(index));
                         index++;
                         return k;
                     }

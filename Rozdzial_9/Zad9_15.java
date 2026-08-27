@@ -1,26 +1,26 @@
 import static myutils.Skrocenie_Print.*;
 
 
-interface one {
+interface one_1 {
 	void jeden();
 	void dwa();	
 }
 
-interface two {
+interface two_1 {
 	void trzy();
 	void cztery();
 }
 
-interface three {
+interface three_1 {
 	void piec();
 	void szesc();
 }
 
-interface four extends one, two, three {
+interface four_1 extends one_1, two_1, three_1 {
 	void siedem();
 }
 
-class Klasapierwsza implements two {
+class Klasapierwsza_1 implements two_1 {
 	@Override
 	public void trzy() { 
 		println("Klasapierwsza.trzy");
@@ -30,27 +30,27 @@ class Klasapierwsza implements two {
 		println("Klasapierwsza.cztery");
 	}
 }
-class Klasatrzecia implements three {
+class Klasatrzecia_1 implements three_1 {
 	@Override
 	public void piec() {};
 	@Override
 	public void szesc() {}; 
 	public void dziewiec() {};
 }
-abstract class Klasaczwartaabstrakt extends Klasapierwsza {
+abstract class Klasaczwartaabstrakt extends Klasapierwsza_1 {
 	public abstract void dziesiec();
 }
 	
-public class Zad9_15 extends Klasaczwartaabstrakt implements four {
-	static void a(one e) {
+public class Zad9_15 extends Klasaczwartaabstrakt implements four_1 {
+	static void a(one_1 e) {
 		e.jeden();
 		e.dwa();
 	}
-	static void b(two f) {
+	static void b(two_1 f) {
 		f.trzy();
 		f.cztery();
 	}
-	static void c(three g) {
+	static void c(three_1 g) {
 		g.piec();
 		g.szesc();
 	}
@@ -75,14 +75,14 @@ public class Zad9_15 extends Klasaczwartaabstrakt implements four {
 		println("Zad9_14.siedem");
 		
 	}
-	static void d(four h) {
+	static void d(four_1 h) {
 		h.siedem(); // z interface four
 	}
 	public void dziesiec() {
 		println("Klasaczwartaabstrakcyjna extendujaca Zad9_15 ktora jest w klasie Zad9_15");
 	}
 	public static void main (String[] args) {
-		three lol = new Klasatrzecia();
+		three_1 lol = new Klasatrzecia_1();
 		c(lol);
 		Zad9_15 sim = new Zad9_15();
 		a(sim);

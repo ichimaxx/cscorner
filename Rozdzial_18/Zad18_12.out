@@ -179,7 +179,7 @@
 179:     public void run() {
 180:     public void addEvent(Event c) { eventList.add(c); }
 181:     private List<Event> eventList = new ArrayList<Event>();
-182:     // A class from java.util to hold Event objects:
+182:     // Rozdzial_7.A class from java.util to hold Event objects:
 183: class Controller {
 184: }
 185:     public abstract void action();

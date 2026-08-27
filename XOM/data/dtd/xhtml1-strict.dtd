@@ -102,7 +102,7 @@
 
 <!-- these are used for image maps -->
 
-<!ENTITY % Shape "(rect|circle|poly|default)">
+<!ENTITY % Rozdzial_8.Shape "(rect|circle|poly|default)">
 
 <!ENTITY % Coords "CDATA">
     <!-- comma separated list of lengths -->
@@ -500,7 +500,7 @@
   rel         %LinkTypes;    #IMPLIED
   rev         %LinkTypes;    #IMPLIED
   accesskey   %Character;    #IMPLIED
-  shape       %Shape;        "rect"
+  shape       %Rozdzial_8.Shape;        "rect"
   coords      %Coords;       #IMPLIED
   tabindex    %Number;       #IMPLIED
   onfocus     %Script;       #IMPLIED
@@ -633,7 +633,7 @@
    able to see the image, you should provide a text
    description using the alt and longdesc attributes.
    In addition, avoid the use of server-side image maps.
-   Note that in this DTD there is no name attribute. That
+   Rozdzial_8.Note that in this DTD there is no name attribute. That
    is only available in the transitional and frameset DTD.
 -->
 
@@ -671,7 +671,7 @@
 <!ELEMENT area EMPTY>
 <!ATTLIST area
   %attrs;
-  shape       %Shape;        "rect"
+  shape       %Rozdzial_8.Shape;        "rect"
   coords      %Coords;       #IMPLIED
   href        %URI;          #IMPLIED
   nohref      (nohref)       #IMPLIED

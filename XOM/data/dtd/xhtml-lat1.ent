@@ -63,19 +63,19 @@
                                   = fraction three quarters, U+00BE ISOnum -->
 <!ENTITY iquest "&#191;"> <!-- inverted question mark
                                   = turned question mark, U+00BF ISOnum -->
-<!ENTITY Agrave "&#192;"> <!-- latin capital letter A with grave
-                                  = latin capital letter A grave,
+<!ENTITY Agrave "&#192;"> <!-- latin capital letter Rozdzial_7.A with grave
+                                  = latin capital letter Rozdzial_7.A grave,
                                   U+00C0 ISOlat1 -->
-<!ENTITY Aacute "&#193;"> <!-- latin capital letter A with acute,
+<!ENTITY Aacute "&#193;"> <!-- latin capital letter Rozdzial_7.A with acute,
                                   U+00C1 ISOlat1 -->
-<!ENTITY Acirc  "&#194;"> <!-- latin capital letter A with circumflex,
+<!ENTITY Acirc  "&#194;"> <!-- latin capital letter Rozdzial_7.A with circumflex,
                                   U+00C2 ISOlat1 -->
-<!ENTITY Atilde "&#195;"> <!-- latin capital letter A with tilde,
+<!ENTITY Atilde "&#195;"> <!-- latin capital letter Rozdzial_7.A with tilde,
                                   U+00C3 ISOlat1 -->
-<!ENTITY Auml   "&#196;"> <!-- latin capital letter A with diaeresis,
+<!ENTITY Auml   "&#196;"> <!-- latin capital letter Rozdzial_7.A with diaeresis,
                                   U+00C4 ISOlat1 -->
-<!ENTITY Aring  "&#197;"> <!-- latin capital letter A with ring above
-                                  = latin capital letter A ring,
+<!ENTITY Aring  "&#197;"> <!-- latin capital letter Rozdzial_7.A with ring above
+                                  = latin capital letter Rozdzial_7.A ring,
                                   U+00C5 ISOlat1 -->
 <!ENTITY AElig  "&#198;"> <!-- latin capital letter AE
                                   = latin capital ligature AE,

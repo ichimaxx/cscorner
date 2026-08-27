@@ -3,23 +3,23 @@ import java.util.*;
 /*Exercise 19: (2) Repair the problem in LostMessage.java by guarding the call in the
 finally clause.*/
 
-class VeryImportantException extends Exception {
+class VeryImportantException_2 extends Exception {
 	public String toString() { 
 		return "A very important exception!";
 	}
 }
-class HoHumException extends Exception {
+class HoHumException_2 extends Exception {
 	public String toString() {
 		return "A trivial exception";
 	}
 }
 
 public class Zad12_19 {
-	void f() throws VeryImportantException {
-		throw new VeryImportantException();
+	void f() throws VeryImportantException_2 {
+		throw new VeryImportantException_2();
 	}
-	void dispose() throws HoHumException {
-		throw new HoHumException();
+	void dispose() throws HoHumException_2 {
+		throw new HoHumException_2();
 	}
 	public static void main(String[] args) {
 		try {

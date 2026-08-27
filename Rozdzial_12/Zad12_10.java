@@ -5,8 +5,8 @@ exception of a new type that you define. In f( ), call g( ), catch its exception
 clause, throw a different exception (of a second type that you define). Test your code in
 main( ).
 */
-class Exception1 extends Exception {
-	public Exception1(String msgs) {
+class Exception1_1 extends Exception {
+	public Exception1_1(String msgs) {
 		super(msgs);
 	}
 }
@@ -19,13 +19,13 @@ class Exception2 extends Exception {
 	}
 }
 public class Zad12_10 {
-	public static void g() throws Exception1 { 
-		throw new Exception1("exception 1 z g()");
+	public static void g() throws Exception1_1 {
+		throw new Exception1_1("exception 1 z g()");
 		} 
 	public static void f() throws Exception2 {
 		try {
 			g();
-		} catch(Exception1 e) {
+		} catch(Exception1_1 e) {
 		throw new Exception2("exeption2 ze srodka f() first try i throw", e); // po prostu do twojego exception ktory chcesz zapisac, wypisujesz e jako ktory bedzie ten co "caused" exception
 		}	
 	}

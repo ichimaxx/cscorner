@@ -6,10 +6,10 @@ import java.util.concurrent.*;
 Exercise 17: (2) Implement the rest of the Map interface for SlowMap.
 */
 // MapEntry przechowuje pojedynczą parę key = value, która używana jest w entrySet() do widoku całej mapy
-class MapEntry<K,V> implements Map.Entry<K,V> {
+class MapEntry_5<K,V> implements Map.Entry<K,V> {
     private K key;
     private V value;
-    public MapEntry(K key, V value) {
+    public MapEntry_5(K key, V value) {
         this.key = key;
         this.value = value;
     }
@@ -25,8 +25,8 @@ class MapEntry<K,V> implements Map.Entry<K,V> {
                 (value==null ? 0 : value.hashCode());
     }
     public boolean equals(Object o) {
-        if(!(o instanceof MapEntry)) return false;
-        MapEntry me = (MapEntry)o;
+        if(!(o instanceof MapEntry_5)) return false;
+        MapEntry_5 me = (MapEntry_5)o;
         return
                 (key == null ?
                         me.getKey() == null : key.equals(me.getKey())) &&
@@ -144,7 +144,7 @@ public class Zad17_17<K,V> extends AbstractMap<K,V> {
 
                     public Map.Entry<K, V> next() {
                         last = index;
-                        MapEntry<K, V> k = new MapEntry<K, V>(keys.get(index), values.get(index));
+                        MapEntry_5<K, V> k = new MapEntry_5<K, V>(keys.get(index), values.get(index));
                         index++;
                         return k;
                     }

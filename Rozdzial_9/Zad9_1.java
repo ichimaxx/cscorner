@@ -30,7 +30,7 @@ class Hamster extends Rodent {
 	}
 }
 
-class Gerbil extends Rodent {
+class Gerbils extends Rodent {
 	@Override
 	void voice(Sound s) {
 		println("Gerbil.sound() is " + Sound.EEP);
@@ -73,7 +73,7 @@ public class Zad9_1 {
 	public static void main(String[] args) {
 		Rodent[] g = {
 			new Hamster(),
-			new Gerbil(),
+			new Gerbils(),
 			new Mouse()
 		};
 	mixAll(g);

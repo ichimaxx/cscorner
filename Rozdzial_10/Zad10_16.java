@@ -1,49 +1,49 @@
 import static myutils.Skrocenie_Print.*;
 
-interface Cycle {
+interface Cycle_4 {
 	void riding();
 }
-interface CycleFactory {
-	Cycle getFactory();
+interface CycleFactory_2 {
+	Cycle_4 getFactory();
 }
-class Unicycle1 implements Cycle {
+class Unicycle1 implements Cycle_4 {
 	Unicycle1() {} // Package access
 	public void riding() {
 		println("Unicycle speed is 10km/h");
 	}
-	public static CycleFactory factory = new CycleFactory() {
-		public Cycle getFactory() {
+	public static CycleFactory_2 factory = new CycleFactory_2() {
+		public Cycle_4 getFactory() {
 			return new Unicycle1();
 		}
 	};
 }
-class Bicycle1 implements Cycle {
+class Bicycle1 implements Cycle_4 {
 	Bicycle1() {} // Package access
 	public void riding() {
 		println("Bicycle speed is 50km/h");
 	}
-	public static CycleFactory factory = new CycleFactory() {
-		public Cycle getFactory() {
+	public static CycleFactory_2 factory = new CycleFactory_2() {
+		public Cycle_4 getFactory() {
 			return new Bicycle1();
 		}
 	};
 }
 
-class Tricycle1 implements Cycle {
+class Tricycle1 implements Cycle_4 {
 	Tricycle1() {} // Package access
 	public void riding() {
 		println("Tricycle speed is 15km/h");
 	}
-	public static CycleFactory factory = new CycleFactory() {
-		public Cycle getFactory() {
+	public static CycleFactory_2 factory = new CycleFactory_2() {
+		public Cycle_4 getFactory() {
 			return new Tricycle1();
 		}
 	};
 }
 
 public class Zad10_16 {
-	public static void serviceConsumer(CycleFactory fact) {
-		Cycle s = fact.getFactory(); // obiekt tworzony przez fabryke
+	public static void serviceConsumer(CycleFactory_2 fact) {
+		Cycle_4 s = fact.getFactory(); // obiekt tworzony przez fabryke
 		s.riding();
 	}
 	public static void main(String[] args) {
