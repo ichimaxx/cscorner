@@ -9,9 +9,7 @@ import static myutils.Skrocenie_Print.println;
 /*
 Exercise 11: (2) In the innerclasses/GreenhouseController.java example,
 GreenhouseController contains a hard-coded set of events. Change the program so that it
-reads the events and their relative times from a text file, ((difficulty level 8): Use a Factory
-Method design pattern to build the events—see Thinking in Patterns (with Java) at
-www.MindView.net.)
+reads the events and their relative times from a text file.
 */
 
 abstract class Event_2 {
@@ -182,7 +180,7 @@ public class Zad18_11 {
             //dla każdej linii z pliku sprawdzana jest nazwa eventu, która tworzy odpowiedni obiekt klasy Event
             switch(eventName) {
                 case "BELL":
-                    events.add(gc.new Bell(eventTime));
+                    gc.addEvent(gc.new Bell(eventTime));
                     break;
                 case "LightOn":
                     events.add(gc.new LightOn(eventTime));
