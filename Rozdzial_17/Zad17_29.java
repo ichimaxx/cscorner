@@ -7,12 +7,12 @@ instead of Integers. Use a Generator from the Arrays chapter to create test valu
 public class Zad17_29 {
     static Random rand = new Random();
     static int reps = 1000;
-    static List<Test<List<String>>> tests =
-            new ArrayList<Test<List<String>>>();
-    static List<Test<LinkedList<String>>> qTests =
-            new ArrayList<Test<LinkedList<String>>>();
+    static List<Test_2<List<String>>> tests =
+            new ArrayList<Test_2<List<String>>>();
+    static List<Test_2<LinkedList<String>>> qTests =
+            new ArrayList<Test_2<LinkedList<String>>>();
     static {
-        tests.add(new Test<List<String>>("add") {
+        tests.add(new Test_2<List<String>>("add") {
             int test(List<String> list, TestParam tp) {
                 int loops = tp.loops;
                 int listSize = tp.size;
@@ -25,7 +25,7 @@ public class Zad17_29 {
                 return loops * listSize;
             }
         });
-        tests.add(new Test<List<String>>("get") {
+        tests.add(new Test_2<List<String>>("get") {
             int test(List<String> list, TestParam tp) {
                 int loops = tp.loops * reps;
                 int listSize = list.size();
@@ -34,7 +34,7 @@ public class Zad17_29 {
                 return loops;
             }
         });
-        tests.add(new Test<List<String>>("set") {
+        tests.add(new Test_2<List<String>>("set") {
         int test(List<String> list, TestParam tp) {
             int loops = tp.loops * reps;
             int listSize = list.size();
@@ -44,7 +44,7 @@ public class Zad17_29 {
             return loops;
         }
     });
- tests.add(new Test<List<String>>("iteradd") {
+ tests.add(new Test_2<List<String>>("iteradd") {
         int test(List<String> list, TestParam tp) {
             final int LOOPS = 1000000;
             int half = list.size() / 2;
@@ -55,7 +55,7 @@ public class Zad17_29 {
             return LOOPS;
         }
     });
- tests.add(new Test<List<String>>("insert") {
+ tests.add(new Test_2<List<String>>("insert") {
         int test(List<String> list, TestParam tp) {
             int loops = tp.loops;
             String[] arrayes = Generated.array(String.class, new CountingGenerator.String(), loops);
@@ -64,7 +64,7 @@ public class Zad17_29 {
             return loops;
         }
     });
- tests.add(new Test<List<String>>("remove") {
+ tests.add(new Test_2<List<String>>("remove") {
         int test(List<String> list, TestParam tp) {
             int loops = tp.loops;
             int size = tp.size;
@@ -79,7 +79,7 @@ public class Zad17_29 {
         }
     });
     // Tests for queue behavior:
- qTests.add(new Test<LinkedList<String>>("addFirst") {
+ qTests.add(new Test_2<LinkedList<String>>("addFirst") {
         int test(LinkedList<String> list, TestParam tp) {
             int loops = tp.loops;
             int size = tp.size;
@@ -92,7 +92,7 @@ public class Zad17_29 {
             return loops * size;
         }
     });
- qTests.add(new Test<LinkedList<String>>("addLast") {
+ qTests.add(new Test_2<LinkedList<String>>("addLast") {
         int test(LinkedList<String> list, TestParam tp) {
             int loops = tp.loops;
             int size = tp.size;
@@ -105,7 +105,7 @@ public class Zad17_29 {
             return loops * size;
         } });
  qTests.add(
-         new Test<LinkedList<String>>("rmFirst") {
+         new Test_2<LinkedList<String>>("rmFirst") {
         int test(LinkedList<String> list, TestParam tp) {
             int loops = tp.loops;
             int size = tp.size;
@@ -119,7 +119,7 @@ public class Zad17_29 {
             return loops * size;
         }
     });
- qTests.add(new Test<LinkedList<String>>("rmLast") {
+ qTests.add(new Test_2<LinkedList<String>>("rmLast") {
         int test(LinkedList<String> list, TestParam tp) {
             int loops = tp.loops;
             int size = tp.size;
@@ -136,7 +136,7 @@ public class Zad17_29 {
 }
 static class ListTester extends Tester<List<String>> {
     public ListTester(List<String> container,
-                      List<Test<List<String>>> tests) {
+                      List<Test_2<List<String>>> tests) {
         super(container, tests);
     }
     // Fill to the appropriate size before each test:
@@ -148,7 +148,7 @@ static class ListTester extends Tester<List<String>> {
     }
     // Convenience method:
     public static void run(List<String> list,
-                           List<Test<List<String>>> tests) {
+                           List<Test_2<List<String>>> tests) {
         new ListTester(list, tests).timedTest();
     }
 }

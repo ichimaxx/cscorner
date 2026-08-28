@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 8: (2) Determine whether an outer class has access to the private elements of
+its inner class.
+*/
 public class Zad10_8 {
 	private int k = 60;
 	private int wartosc() {

@@ -1,5 +1,9 @@
 import static myutils.Skrocenie_Print.*;
+/*
+Exercise 13: (2) Create an interface, and inherit two new interfaces from that interface.
+Multiply inherit a third interface from the second two.
 
+*/
 
 interface ones {
 	void one();

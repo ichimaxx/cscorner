@@ -1,7 +1,10 @@
 import static myutils.Skrocenie_Print.*;
 import java.util.*; 
 
-
+/*
+Exercise 17: (1) Modify the solution to Exercise 19 from the Interfaces chapter to use
+anonymous inner classes.
+*/
 
 interface Game1 { 
 	boolean rzut(); 

@@ -5,11 +5,11 @@ Exercise 30: (3) Compare the performance of Collections.sort( ) between an
 ArrayList and a LinkedList.
 */
 public class Zad17_30 {
-    static List<Test<List<Integer>>> tests =
-            new ArrayList<Test<List<Integer>>>();
+    static List<Test_2<List<Integer>>> tests =
+            new ArrayList<Test_2<List<Integer>>>();
 
     static {
-        tests.add(new Test<List<Integer>>("sort") {
+        tests.add(new Test_2<List<Integer>>("sort") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int listSize = tp.size;
@@ -24,7 +24,7 @@ public class Zad17_30 {
 
     static class ListTester extends Tester<List<Integer>> {
         public ListTester(List<Integer> container,
-                          List<Test<List<Integer>>> tests) {
+                          List<Test_2<List<Integer>>> tests) {
             super(container, tests);
         }
 
@@ -38,7 +38,7 @@ public class Zad17_30 {
 
         // Convenience method:
         public static void run(List<Integer> list,
-                               List<Test<List<Integer>>> tests) {
+                               List<Test_2<List<Integer>>> tests) {
             new ListTester(list, tests).timedTest();
         }
     }

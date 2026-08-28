@@ -1,4 +1,8 @@
 import static myutils.Skrocenie_Print.*;
+/*
+Exercise 16: (3) Create a class that produces a sequence of chars. Adapt this class so
+that it can be an input to a Scanner object.
+*/
 import java.util.*;
 import java.nio.*;
 public class Zad9_16 implements Readable {

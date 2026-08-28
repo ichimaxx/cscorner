@@ -1,7 +1,10 @@
 import static myutils.Skrocenie_Print.*;
 import java.util.*; 
 
-
+/*
+Exercise 19: (3) Create a framework using Factory Methods that performs both coin
+tossing and dice tossing.
+*/
 
 interface Game { 
 	boolean rzut(); 

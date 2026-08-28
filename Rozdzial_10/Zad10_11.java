@@ -1,5 +1,9 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 11: (2) Create a private inner class that implements a public interface. Write
+a method that returns a reference to an instance of the private inner class, upcast to the
+interface. Show that the inner class is completely hidden by trying to downcast to it.
+*/
 class Outers {
 	public void outers() {}
 	//po odkomentowaniu poniższej linijki, program się nie skompiluje
@@ -21,7 +25,8 @@ public class Zad10_11 extends Outers {
 		Parcel8 p = o.parcelos8(true);
 		p.setup();
 		Outers se = new Outers();
-		se.g.setup();
+		//odkomentuj poniższą linię, aby zobaczyć oczekiwany w zadaniu błąd
+		//se.g.setup();
 	}
 }
 		

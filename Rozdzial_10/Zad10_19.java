@@ -1,5 +1,9 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 19: (2) Create a class containing an inner class that itself contains an inner
+class. Repeat this using nested classes. Note the names of the .class files produced by the
+compiler.
+*/
 public class Zad10_19 {
 	private class IClass1 {
 		private class IClass2 {

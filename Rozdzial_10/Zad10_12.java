@@ -1,4 +1,7 @@
 import static myutils.Skrocenie_Print.*;
+/*
+Exercise 12: (1) Repeat Exercise 7 using an anonymous inner class.
+*/
 class Inner107 {};
 
 public class Zad10_12 {

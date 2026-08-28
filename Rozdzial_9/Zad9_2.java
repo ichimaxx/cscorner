@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 2: (1) Create a class as abstract without including any abstract methods and
+verify that you cannot create any instances of that class.
+*/
 
 abstract class Abstrakt {
 	void test() {
@@ -15,8 +18,9 @@ class Noabstrakt extends Abstrakt {
 }
 public class Zad9_2 {
 	public static void main (String[] args) {
-		Abstrakt ab = new Abstrakt();
-		ab.test();
+		//Odkomentuj poniżej przed uruchomieniem klasy
+		//Abstrakt ab = new Abstrakt();
+		//ab.test();
 	}
 }
 		

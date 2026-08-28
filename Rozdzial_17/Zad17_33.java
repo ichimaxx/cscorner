@@ -122,12 +122,12 @@ class FastTraversalLinkedList<E> extends AbstractList<E> {
 public class Zad17_33 {
     static Random rand = new Random();
     static int reps = 1000;
-    static List<Test<List<Integer>>> tests =
-            new ArrayList<Test<List<Integer>>>();
-    static List<Test<LinkedList<Integer>>> qTests =
-            new ArrayList<Test<LinkedList<Integer>>>();
+    static List<Test_2<List<Integer>>> tests =
+            new ArrayList<Test_2<List<Integer>>>();
+    static List<Test_2<LinkedList<Integer>>> qTests =
+            new ArrayList<Test_2<LinkedList<Integer>>>();
     static {
-        tests.add(new Test<List<Integer>>("add") {
+        tests.add(new Test_2<List<Integer>>("add") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int listSize = tp.size;
@@ -139,7 +139,7 @@ public class Zad17_33 {
                 return loops * listSize;
             }
         });
-        tests.add(new Test<List<Integer>>("get") {
+        tests.add(new Test_2<List<Integer>>("get") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops * reps;
                 int listSize = list.size();
@@ -148,7 +148,7 @@ public class Zad17_33 {
                 return loops;
             }
         });
-        tests.add(new Test<List<Integer>>("set") { int test(List<Integer> list, TestParam tp) {
+        tests.add(new Test_2<List<Integer>>("set") { int test(List<Integer> list, TestParam tp) {
             int loops = tp.loops * reps;
             int listSize = list.size();
             for(int i = 0; i < loops; i++)
@@ -156,7 +156,7 @@ public class Zad17_33 {
             return loops;
         }
         });
-        tests.add(new Test<List<Integer>>("iteradd") {
+        tests.add(new Test_2<List<Integer>>("iteradd") {
             int test(List<Integer> list, TestParam tp) {
                 final int LOOPS = 1000000;
                 int half = list.size() / 2;
@@ -166,7 +166,7 @@ public class Zad17_33 {
                 return LOOPS;
             }
         });
-        tests.add(new Test<List<Integer>>("insert") {
+        tests.add(new Test_2<List<Integer>>("insert") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 for(int i = 0; i < loops; i++)
@@ -174,7 +174,7 @@ public class Zad17_33 {
                 return loops;
             }
         });
-        tests.add(new Test<List<Integer>>("remove") {
+        tests.add(new Test_2<List<Integer>>("remove") {
             int test(List<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -188,7 +188,7 @@ public class Zad17_33 {
             }
         });
         // Tests for queue behavior:
-        qTests.add(new Test<LinkedList<Integer>>("addFirst") {
+        qTests.add(new Test_2<LinkedList<Integer>>("addFirst") {
             int test(LinkedList<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -200,7 +200,7 @@ public class Zad17_33 {
                 return loops * size;
             }
         });
-        qTests.add(new Test<LinkedList<Integer>>("addLast") {
+        qTests.add(new Test_2<LinkedList<Integer>>("addLast") {
             int test(LinkedList<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -212,7 +212,7 @@ public class Zad17_33 {
                 return loops * size;
             } });
         qTests.add(
-                new Test<LinkedList<Integer>>("rmFirst") {
+                new Test_2<LinkedList<Integer>>("rmFirst") {
                     int test(LinkedList<Integer> list, TestParam tp) {
                         int loops = tp.loops;
                         int size = tp.size;
@@ -225,7 +225,7 @@ public class Zad17_33 {
                         return loops * size;
                     }
                 });
-        qTests.add(new Test<LinkedList<Integer>>("rmLast") {
+        qTests.add(new Test_2<LinkedList<Integer>>("rmLast") {
             int test(LinkedList<Integer> list, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -241,7 +241,7 @@ public class Zad17_33 {
     }
     static class ListTester extends Tester<List<Integer>> {
         public ListTester(List<Integer> container,
-                          List<Test<List<Integer>>> tests) {
+                          List<Test_2<List<Integer>>> tests) {
             super(container, tests);
         }
         // Fill to the appropriate size before each test:
@@ -252,7 +252,7 @@ public class Zad17_33 {
         }
         // Convenience method:
         public static void run(List<Integer> list,
-                               List<Test<List<Integer>>> tests) {
+                               List<Test_2<List<Integer>>> tests) {
             new ListTester(list, tests).timedTest();
         }
     }

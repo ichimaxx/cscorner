@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 18: (2) Create a Cycle interface, with implementations Unicycle, Bicycle
+and Tricycle. Create factories for each type of Cycle, and code that uses these factories.
+*/
 interface Cycle {
 	void riding();
 }

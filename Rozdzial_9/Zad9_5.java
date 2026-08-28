@@ -1,6 +1,9 @@
 import interfejs.Interfacek;
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 5: (2) Create an interface containing three methods, in its own package.
+Implement the interface in a different package.
+*/
 public class Zad9_5 implements Interfacek {
 	@Override
 	public void metoda1(){

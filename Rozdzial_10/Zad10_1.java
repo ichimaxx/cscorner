@@ -1,5 +1,9 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 1: (1) Write a class named Outer that contains an inner class named Inner.
+Add a method to Outer that returns an object of type Inner. In main( ), create and
+initialize a reference to an Inner.
+*/
 public class Zad10_1 {
 	class Inner {
 		private int f = 25;

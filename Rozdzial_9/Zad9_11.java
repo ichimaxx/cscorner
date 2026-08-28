@@ -1,6 +1,10 @@
 import static myutils.Skrocenie_Print.*;
 import java.util.*; 
-
+/*
+Exercise 11: (4) Create a class with a method that takes a String argument and produces
+a result that swaps each pair of characters in that argument. Adapt the class so that it works
+with interfaceprocessor.Apply.process( ).
+*/
 interface Processor {
 	String name();
 	Object process(Object input);

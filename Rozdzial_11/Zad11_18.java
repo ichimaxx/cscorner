@@ -5,7 +5,8 @@ import java.util.*;
 ordering by hash code. Extract the pairs, sort by key, and place the result into a
 LinkedHashMap. Show that the insertion order is maintained. */
 
-public class Zad11_18 {
+public class
+Zad11_18 {
 	public static void main (String[] args) {
 		Map<String,Integer> mapson = new HashMap<>();
 		

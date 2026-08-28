@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 10: (1) Repeat the previous exercise but define the inner class within a scope
+within a method.
+*/
 
 interface Parcel7	 {
 	void mogila();

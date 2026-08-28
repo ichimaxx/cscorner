@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 12: (2) In Adventure.java, add an interface called CanClimb, following the
+form of the other interfaces.
+*/
 interface CanFight {
 	void fight();
 }

@@ -5,10 +5,10 @@ Exercise 34: (1) Modify SetPerformance.java so that the Sets hold String objects
 instead of Integers. Use a Generator from the Arrays chapter to create test values.
 */
 public class Zad17_34 {
-    static List<Test<Set<String>>> tests =
-            new ArrayList<Test<Set<String>>>();
+    static List<Test_2<Set<String>>> tests =
+            new ArrayList<Test_2<Set<String>>>();
     static {
-        tests.add(new Test<Set<String>>("add") {
+        tests.add(new Test_2<Set<String>>("add") {
             int test(Set<String> set, TestParam tp) {
                 int loops = tp.loops;
                 int size = tp.size;
@@ -22,7 +22,7 @@ public class Zad17_34 {
                 return loops * size;
             }
         });
-        tests.add(new Test<Set<String>>("contains") {
+        tests.add(new Test_2<Set<String>>("contains") {
             int test(Set<String> set, TestParam tp) {
                 int loops = tp.loops;
                 int span = tp.size * 2;
@@ -34,7 +34,7 @@ public class Zad17_34 {
                 return loops * span;
             }
         });
-        tests.add(new Test<Set<String>>("iterate") {
+        tests.add(new Test_2<Set<String>>("iterate") {
             int test(Set<String> set, TestParam tp) {
                 int loops = tp.loops * 10;
                 for(int i = 0; i < loops; i++) {

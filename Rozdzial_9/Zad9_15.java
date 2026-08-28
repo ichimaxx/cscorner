@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 15: (2) Modify the previous exercise by creating an abstract class and
+inheriting that into the derived class. 
+*/
 
 interface one_1 {
 	void jeden();

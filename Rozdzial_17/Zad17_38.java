@@ -10,10 +10,10 @@ capacity and copying the old map into the new one, then run your lookup speed te
 the new map.
 */
 public class Zad17_38 {
-        static List<Test<Map<String,String>>> tests =
-                new ArrayList<Test<Map<String,String>>>();
+        static List<Test_2<Map<String,String>>> tests =
+                new ArrayList<Test_2<Map<String,String>>>();
         static {
-            tests.add(new Test<Map<String,String>>("get") {
+            tests.add(new Test_2<Map<String,String>>("get") {
                 int test(Map<String,String> map, TestParam tp) {
                     int loops = tp.loops;
                     int span = tp.size * 2;

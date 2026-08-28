@@ -1,6 +1,9 @@
 import static myutils.Skrocenie_Print.*;
 import java.util.*; 
-
+/*
+Exercise 8: (1) Modify Exercise l so it uses an Iterator to move through the List while
+calling hop( ).
+*/
 
 class Gerbil_7 {
 	protected int gerbilNumber;

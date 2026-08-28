@@ -1,5 +1,9 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 8: (2) In polymorphism.Sandwich.java, create an interface called
+FastFoo d (with appropriate methods) and change Sandwic h so that it also implements
+FastFood.
+*/
 interface FastFood {
 	void fastfood();
 }

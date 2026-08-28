@@ -1,6 +1,8 @@
 import java.util.*;
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 2: (1) Modify SimpleCollection.java to use a Set for c.
+*/
 public class Zad11_2 {
 	public static void main(String[] args) {
 	Set<Integer> c = new HashSet<Integer>(); // do metody Set moge uzyc HashSet a nie ArrayList...

@@ -7,13 +7,13 @@ Exercise 34: (1) Modify ExchangerDemo.java to use your own class instead of Fat.
 //producent tworzy obiekty i przekazuje pełną listę konsumentowi
     class ExchangerProducer<T> implements Runnable {
         //generator tworzy kolejne obiekty typu T
-    private Generator<T> generator;
+    private myutils.Generator<T> generator;
     //wspólny punkt wymiany pomiędzy consumentem i producerem
     private Exchanger<List<T>> exchanger;
     //lista aktualnie należąca do producera
     private List<T> holder;
     ExchangerProducer(Exchanger<List<T>> exchg,
-                      Generator<T> gen, List<T> holder) {
+                      myutils.Generator<T> gen, List<T> holder) {
         exchanger = exchg;generator = gen;
         this.holder = holder;
     }
@@ -95,7 +95,7 @@ public class Zad21_34 {
                 consumerList = new CopyOnWriteArrayList<MojWlasnyFat>();
         //uruchomienie producera tworzącego obiekty
         exec.execute(new ExchangerProducer<MojWlasnyFat>(xc,
-                BasicGenerator.create(MojWlasnyFat.class), producerList));
+                myutils.BasicGenerator.create(MojWlasnyFat.class), producerList));
         //uruchomienie consumera opróżniającego pełne listy
         exec.execute(
                 new ExchangerConsumer<MojWlasnyFat>(xc,consumerList));

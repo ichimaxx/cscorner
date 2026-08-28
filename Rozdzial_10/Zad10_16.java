@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 16: (1) Modify the solution to Exercise 18 from the Interfaces chapter to use
+anonymous inner classes.
+*/
 interface Cycle_4 {
 	void riding();
 }

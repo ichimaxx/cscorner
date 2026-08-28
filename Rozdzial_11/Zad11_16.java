@@ -1,7 +1,11 @@
 import java.util.*;
 import net.mindview.util.*;
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 16: (5) Create a Set of the vowels. Working from UniqueWords.Java, count
+and display the number of vowels in each input word, and also display the total number of
+vowels in the input file.
+*/
 public class Zad11_16 extends UniqueWords {
 	public static void main (String[] args) {
 		Set<String> words = new TreeSet<String>(new TextFile("SetOperations.java", "\\W+"));

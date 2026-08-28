@@ -1,16 +1,21 @@
 import interfejs.Interfacek_private;
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 6: (2) Prove that all the methods in an interface are automatically public.
+*/
 public class Zad9_6 implements Interfacek_private {
 	@Override
+	public // usuń, aby zobaczyć rozwiązanie zadania
 	void metoda1(){ //nie przejdzie bo interface jest domyślnie public
 		println("metoda1 printek");
 	}
-	@Override	
+	@Override
+	public // usuń, aby zobaczyć rozwiązanie zadania
 	void metoda2(){ //nie przejdzie bo interface jest domyślnie public
 		println("metoda2 printek");
 	}
-	@Override	
+	@Override
+	public // usuń, aby zobaczyć rozwiązanie zadania
 	void metoda3(){ //nie przejdzie bo interface jest domyślnie public
 		println("metoda3 printek");
 	}

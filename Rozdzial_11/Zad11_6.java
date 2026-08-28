@@ -1,6 +1,9 @@
 import java.util.*;
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 6: (2) Modify ListFeatures.java so that it uses Strings instead of Pets, and
+explain any difference in results.
+*/
 
 public class Zad11_6 {
 

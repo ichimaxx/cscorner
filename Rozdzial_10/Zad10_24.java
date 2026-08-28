@@ -1,8 +1,10 @@
 import controller.*;
-
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+Exercise 24: (2) In GreenhouseControls.java, add Event inner classes that turn
+fans on and off. Configure GreenhouseController.java to use these new Event objects.
+*/
 class Controller_6 {
 	// A class from java.util to hold Event objects:
 	private List<Event> eventList = new ArrayList<Event>();
@@ -19,7 +21,7 @@ class Controller_6 {
 				}
 	}
 }
-class GreenhouseControls_4 extends Controller {
+class GreenhouseControls_4 extends Controller_6 {
 	private boolean light = false;
 
 	public class LightOn extends Event {
@@ -156,7 +158,7 @@ class GreenhouseControls_4 extends Controller {
 		}
 
 		public void action() {
-			addEvent(new GreenhouseControls.Bell(delayTime));
+			addEvent(new GreenhouseControls_4.Bell(delayTime));
 		}
 
 		public String toString() {
@@ -205,7 +207,7 @@ class GreenhouseControls_4 extends Controller {
 
 public class Zad10_24 {
 	public static void main(String[] args) {
-		GreenhouseControls_3 gc = new GreenhouseControls_3();
+		GreenhouseControls_4 gc = new GreenhouseControls_4();
 		// Instead of hard-wiring, you could parse
 		// configuration information from a text file here:
 		gc.addEvent(gc.new Bell(900));
@@ -222,7 +224,7 @@ public class Zad10_24 {
 		gc.addEvent(gc.new Restart(2000, eventList));
 		if(args.length == 1)
 			gc.addEvent(
-				new GreenhouseControls_3.Terminate(
+				new GreenhouseControls_4.Terminate(
 					Integer.parseInt(args[0])));
 		gc.run();
 	}

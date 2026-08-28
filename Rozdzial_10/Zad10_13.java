@@ -1,5 +1,7 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 13: (1) Repeat Exercise 9 using an anonymous inner class.
+*/
 
 interface Parcel11 {
 	default void speak() {

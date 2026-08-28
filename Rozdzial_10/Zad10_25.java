@@ -1,5 +1,9 @@
 import controller.*;
-
+/*
+Exercise 25: (3) Inherit from GreenhouseControls in GreenhouseControls.java
+to add Event inner classes that turn water mist generators on and off. Write a new version of
+GreenhouseController.java to use these new Event objects.
+*/
 public class Zad10_25 {
 	public static void main(String[] args) {
 		GreenhouseControls2 ab = new GreenhouseControls2();

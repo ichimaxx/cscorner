@@ -1,6 +1,10 @@
 import controllerCH11.*;
 import java.util.*; 
-
+/*
+Exercise 13: (3) In the innerclasses/GreenhouseController.java example, the
+class Controller uses an ArrayList. Change the code to use a LinkedList instead, and use
+an Iterator to cycle through the set of events.
+*/
 // PEŁNE ROZWIAZANIE W Controller.JAVA ROZDZIAL_11
 public class Zad11_13 {
 	public static void main(String[] args) {

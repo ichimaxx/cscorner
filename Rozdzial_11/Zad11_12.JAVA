@@ -1,6 +1,11 @@
 import java.util.*;
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 12: (3) Create and populate a List<Integer>. Create a second List<Integer>
+of the same size as the first, and use ListIterators to read elements from the first List and
+insert them into the second in reverse order. (You may want to explore a number of different
+ways to solve this problem.)
+*/
 public class Zad11_12 {
 	public static void main(String[] args) {
 		List<Integer> koks = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5, 6, 7));

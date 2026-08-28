@@ -1,6 +1,9 @@
 import static myutils.Skrocenie_Print.*;
 import java.util.*; 
-
+/*
+Exercise 14: (3) Create an empty LinkedList<Integer>. Using a Listlterator, add
+Integers to the List by always inserting them in the middle of the List.
+*/
 public class Zad11_14 {	
 	public static int dzialanie(LinkedList<Integer> intlist) {
 		int size = intlist.size();

@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 7: (1) Change Exercise 9 in the Polymorphism chapter so that Rodent is an
+interface.
+*/
 enum Sound_5 {
 	MEEP, EEP, SQUEAK;
 }

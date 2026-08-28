@@ -48,14 +48,14 @@ class NowyCon {
 public class Zad17_31 {
     static Random rand = new Random();
     static int reps = 1000;
-    static List<Test<List<String>>> tests =
-            new ArrayList<Test<List<String>>>();
+    static List<Test_2<List<String>>> tests =
+            new ArrayList<Test_2<List<String>>>();
     // osobny test dla nowo stworzonego kontenera NowyCon
-    static List<Test<NowyCon>> conTests =
-            new ArrayList<Test<NowyCon>>();
+    static List<Test_2<NowyCon>> conTests =
+            new ArrayList<Test_2<NowyCon>>();
 
     static {
-        tests.add(new Test<List<String>>("add") {
+        tests.add(new Test_2<List<String>>("add") {
             int test(List<String> list, TestParam tp) {
                 int loops = tp.loops;
                 int listSize = tp.size;
@@ -68,7 +68,7 @@ public class Zad17_31 {
                 return loops * listSize;
             }
         });
-        conTests.add(new Test<NowyCon>("add") {
+        conTests.add(new Test_2<NowyCon>("add") {
             int test(NowyCon list, TestParam tp) {
                 int loops = tp.loops;
                 int listSize = tp.size;
@@ -81,7 +81,7 @@ public class Zad17_31 {
                 return loops * listSize;
             }
         });
-        tests.add(new Test<List<String>>("get") {
+        tests.add(new Test_2<List<String>>("get") {
             int test(List<String> list, TestParam tp) {
                 int loops = tp.loops * reps;
                 int listSize = list.size();
@@ -90,7 +90,7 @@ public class Zad17_31 {
                 return loops;
             }
         });
-        conTests.add(new Test<NowyCon>("get") {
+        conTests.add(new Test_2<NowyCon>("get") {
             int test(NowyCon list, TestParam tp) {
                 int loops = tp.loops * reps;
                 int listSize = list.size();
@@ -103,7 +103,7 @@ public class Zad17_31 {
 
     static class ListTester extends Tester<List<String>> {
         public ListTester(List<String> container,
-                          List<Test<List<String>>> tests) {
+                          List<Test_2<List<String>>> tests) {
             super(container, tests);
         }
 
@@ -118,13 +118,13 @@ public class Zad17_31 {
 
         // Convenience method:
         public static void run(List<String> list,
-                               List<Test<List<String>>> tests) {
+                               List<Test_2<List<String>>> tests) {
             new ListTester(list, tests).timedTest();
         }
     }
     static class ConTester extends Tester<NowyCon> {
         public ConTester(NowyCon container,
-                          List<Test<NowyCon>> tests) {
+                          List<Test_2<NowyCon>> tests) {
             super(container, tests);
         }
 
@@ -141,7 +141,7 @@ public class Zad17_31 {
 
         // Convenience method:
         public static void run(NowyCon list,
-                               List<Test<NowyCon>> tests) {
+                               List<Test_2<NowyCon>> tests) {
             new ConTester(list, tests).timedTest();
         }
     }

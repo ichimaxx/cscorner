@@ -1,6 +1,9 @@
 import java.util.*;
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 3: (2) Modify innerclasses/Sequence.java so that you can add any number
+of elements to it.
+*/
 interface Selector_3 {
 	boolean end();
 	Object current();

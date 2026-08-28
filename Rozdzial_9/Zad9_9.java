@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 9: (3) Refactor Musics.java by moving the common methods in Wind,
+Percussion and Stringed into an abstract class.
+*/
 enum Note {
 	MIDDLE_C, C_SHARP, B_FLAT;
 }

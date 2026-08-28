@@ -1,10 +1,15 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 10: (3) Modify Musics.java by adding a Playable interface. Move the play( )
+declaration from Instrument to Playable. Add Playable to the derived classes by
+including it in the implement s list. Change tune( ) so that it takes a Playable instead of
+an Instrument.
+*/
 enum Note_4 {
 	MIDDLE_C, C_SHARP, B_FLAT;
 }
 interface Playable {
-	void play(Note n);
+	void play(Note_4 n);
 }
 abstract class Instrument_4{
 	String what() { 
@@ -16,7 +21,7 @@ abstract class Instrument_4{
 	}
 	abstract void adjust();
 }
-class Wind_4 extends Instrument_4 implements Playable  {
+class Wind_4 extends Instrument_4 implements Playable {
 	@Override
 	public void play(Note_4 n) {
 		println("Wind.play() " + n);

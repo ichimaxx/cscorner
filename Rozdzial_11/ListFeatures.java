@@ -1,5 +1,10 @@
 import pets.*;
+import pets.Hamster;
+import pets.Cymric;
+import pets.Pet;
+import pets.Pets;
 import java.util.*;
+import pets.Mouse;
 import static myutils.Skrocenie_Print.*;
 
 public class ListFeatures {

@@ -1,5 +1,9 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 9: (1) Create an interface with at least one method, and implement that
+interface by defining an inner class within a method, which returns a reference to your
+interface.
+*/
 
 interface Parcel6 {
 	default void speak() {

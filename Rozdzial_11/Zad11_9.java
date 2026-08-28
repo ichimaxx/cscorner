@@ -1,7 +1,10 @@
 import static myutils.Skrocenie_Print.*;
 import java.util.*; 
 
-
+/*
+Exercise 9: (4) Modify innerclasses/Sequence.java so that Sequence works with an
+Iterator instead of a Selector.
+*/
 public class Zad11_9 {
 	private Object[] items;
 	private int next = 0;

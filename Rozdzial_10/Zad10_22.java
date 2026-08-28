@@ -1,5 +1,7 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 22: (2) Implement reverseSelector( ) in Sequence.java.
+*/
 interface Selector_4 {
 	boolean end();
 	Object current();

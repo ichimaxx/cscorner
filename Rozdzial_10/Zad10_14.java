@@ -1,5 +1,8 @@
 import static myutils.Skrocenie_Print.*;
-
+/*
+Exercise 14: (1) Modify interfaces/HorrorShow.java to implement
+DangerousMonster and Vampire using anonymous classes.
+*/
 interface Monster {
 	void menace();
 }

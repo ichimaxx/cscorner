@@ -278,10 +278,10 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
     }
 }
         public class Zad17_37 {
-            static List<Test<Map<String,String>>> tests =
-                    new ArrayList<Test<Map<String,String>>>();
+            static List<Test_2<Map<String,String>>> tests =
+                    new ArrayList<Test_2<Map<String,String>>>();
             static {
-                tests.add(new Test<Map<String,String>>("put") {
+                tests.add(new Test_2<Map<String,String>>("put") {
                     int test(Map<String,String> map, TestParam tp) {
                         int loops = tp.loops;
                         int size = tp.size;
@@ -294,7 +294,7 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
                         return loops * size;
                     }
                 });
-                tests.add(new Test<Map<String,String>>("get") {
+                tests.add(new Test_2<Map<String,String>>("get") {
                     int test(Map<String,String> map, TestParam tp) {
                         int loops = tp.loops;
                         int span = tp.size * 2;
@@ -305,7 +305,7 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
                         return loops * span;
                     }
                 });
-                tests.add(new Test<Map<String,String>>("iterate") {
+                tests.add(new Test_2<Map<String,String>>("iterate") {
                     int test(Map<String,String> map, TestParam tp) {
                         int loops = tp.loops * 10;
                         for(int i = 0; i < loops; i ++) {

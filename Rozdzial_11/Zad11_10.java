@@ -1,6 +1,9 @@
 import static myutils.Skrocenie_Print.*;
 import java.util.*; 
-
+/*
+Exercise 10: (2) Change Exercise 9 in the Polymorphism chapter to use an ArrayList to
+hold the Rodents and an Iterator to move through the sequence of Rodents.
+*/
 enum Sound_6 {
 	MEEP, EEP, SQUEAK;
 }
