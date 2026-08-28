@@ -6,9 +6,9 @@ proxy argument and explain what happens.
 */
 
 
-class DynamicProxyHandler implements InvocationHandler {
+class DynamicProxyHandler_2 implements InvocationHandler {
 	private Object proxied;
-	public DynamicProxyHandler(Object proxied) {
+	public DynamicProxyHandler_2(Object proxied) {
 		this.proxied = proxied;
 	}
 	public Object
@@ -34,7 +34,7 @@ class Zad14_23 {
 		Interface proxy = (Interface)Proxy.newProxyInstance(
 			Interface.class.getClassLoader(),
 			new Class[]{ Interface.class },
-			new DynamicProxyHandler(real));
+			new DynamicProxyHandler_2(real));
 		consumer(proxy);
 	}
 } 

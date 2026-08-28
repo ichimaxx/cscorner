@@ -14,11 +14,11 @@ Method design pattern to build the events—see Thinking in Patterns (with Java)
 www.MindView.net.)
 */
 
-abstract class Event {
+abstract class Event_2 {
     private long eventTime;
     private String name;
     protected final long delayTime;
-    public Event(long delayTime) {
+    public Event_2(long delayTime) {
         this.delayTime = delayTime;
         start();
     }
@@ -30,15 +30,15 @@ abstract class Event {
     }
     public abstract void action();
 }
-class Controller {
+class Controller_3 {
     // A class from java.util to hold Event objects:
-    private List<Event> eventList = new ArrayList<Event>();
-    public void addEvent(Event c) { eventList.add(c); }
+    private List<Event_2> eventList = new ArrayList<Event_2>();
+    public void addEvent(Event_2 c) { eventList.add(c); }
     public void run() {
         while(eventList.size() > 0)
             // Make a copy so you're not modifying the list
             // while you're selecting the elements in it:
-            for(Event e : new ArrayList<Event>(eventList))
+            for(Event_2 e : new ArrayList<Event_2>(eventList))
                 if(e.ready()) {
                     System.out.println(e);
                     e.action();
@@ -46,9 +46,9 @@ class Controller {
                 }
     }
 }
-class GreenhouseControls extends Controller {
+class GreenhouseControls_3 extends Controller_3 {
     private boolean light = false;
-    public class LightOn extends Event {
+    public class LightOn extends Event_2 {
         public LightOn(long delayTime) { super(delayTime); }
         public void action() {
             // Put hardware control code here to
@@ -57,7 +57,7 @@ class GreenhouseControls extends Controller {
         }
         public String toString() { return "Light is on"; }
     }
-    public class LightOff extends Event {
+    public class LightOff extends Event_2 {
         public LightOff(long delayTime) { super(delayTime); }
         public void action() {
             // Put hardware control code here to
@@ -67,7 +67,7 @@ class GreenhouseControls extends Controller {
         public String toString() { return "Light is off"; }
     }
     private boolean water = false;
-    public class WaterOn extends Event {
+    public class WaterOn extends Event_2 {
         public WaterOn(long delayTime) { super(delayTime); }
         public void action() {
             // Put hardware control code here.
@@ -77,7 +77,7 @@ class GreenhouseControls extends Controller {
             return "Greenhouse water is on";
         }
     }
-    public class WaterOff extends Event {
+    public class WaterOff extends Event_2 {
         public WaterOff(long delayTime) { super(delayTime); }
         public void action() {
             // Put hardware control code here.
@@ -88,7 +88,7 @@ class GreenhouseControls extends Controller {
         }
     }
     private String thermostat = "Day";
-    public class ThermostatNight extends Event {
+    public class ThermostatNight extends Event_2 {
         public ThermostatNight(long delayTime) {
             super(delayTime);
         }
@@ -100,7 +100,7 @@ class GreenhouseControls extends Controller {
             return "Thermostat on night setting";
         }
     }
-    public class ThermostatDay extends Event {
+    public class ThermostatDay extends Event_2 {
         public ThermostatDay(long delayTime) {
             super(delayTime);
         }
@@ -114,25 +114,25 @@ class GreenhouseControls extends Controller {
     }
     // An example of an action() that inserts a
     // new one of itself into the event list:
-    public class Bell extends Event {
+    public class Bell extends Event_2 {
         public Bell(long delayTime) { super(delayTime); }
         public void action() {
             addEvent(new Bell(delayTime));
         }
         public String toString() { return "Bing!"; }
     }
-    class Restart extends Event {
-        private Event[] eventList;
+    class Restart extends Event_2 {
+        private Event_2[] eventList;
 
-        public Restart(long delayTime, Event[] eventList) {
+        public Restart(long delayTime, Event_2[] eventList) {
             super(delayTime);
             this.eventList = eventList;
-            for (Event e : eventList)
+            for (Event_2 e : eventList)
                 addEvent(e);
         }
 
         public void action() {
-            for (Event e : eventList) {
+            for (Event_2 e : eventList) {
                 e.start(); // Rerun each event
                 addEvent(e);
             }
@@ -144,7 +144,7 @@ class GreenhouseControls extends Controller {
             return "Restarting system";
         }
     }
-    public static class Terminate extends Event {
+    public static class Terminate extends Event_2 {
         public Terminate(long delayTime) { super(delayTime); }
         public void action() { System.exit(0); }
         public String toString() { return "Terminating";  }
@@ -165,13 +165,13 @@ public class Zad18_11 {
 
     public static void main(String[] args) throws IOException {
         long delay = 12000L * 1000000;
-        GreenhouseControls gc = new GreenhouseControls();
+        GreenhouseControls_3 gc = new GreenhouseControls_3();
         if (args.length <= 0) {
             println("USAGE: java Zad18_11 filename");
             return;
         }
         //lista eventów
-        List<Event> events = new ArrayList<Event>();
+        List<Event_2> events = new ArrayList<Event_2>();
         for (String line : read(args[0])) {
             //podzielenie listy line na osobne wyrazy
             String[] parts = line.split("\\s+");
@@ -207,9 +207,9 @@ public class Zad18_11 {
             }
         }
         //zamiana kontenera eventów na array eventów, aby można było uruchomić z metodą Restart()
-        Event[] eventArray = events.toArray(new Event[0]);
+        Event_2[] eventArray = events.toArray(new Event_2[0]);
         gc.addEvent(gc.new Restart(2000L * 1000000, eventArray));
-        gc.addEvent(new GreenhouseControls.Terminate(delay));
+        gc.addEvent(new GreenhouseControls_3.Terminate(delay));
         gc.run();
     }
 }

@@ -4,14 +4,14 @@ Exercise 8: (1) Create a base class with only a non-default constructor, and a d
 class with both a default (no-arg) and non-default constructor. In the derived-class
 constructors, call the base-class constructor.
 */
-class A1 {
+class A1_1 {
 	protected String c;
-	A1(String c) {
+	A1_1(String c) {
 		this.c = "J";
 		println("Rozdzial_7.A(" + c + ")");
 	}
 }
-public class Zad7_8 extends A1 {
+public class Zad7_8 extends A1_1 {
 	private String d;
 	// konstruktor domyslny czuyli ze bez argumentów
 	public Zad7_8() {

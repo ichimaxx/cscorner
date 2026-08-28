@@ -5,42 +5,42 @@ Shape, then downcast it back to a Rhomboid. Try downcasting to a Circle and see 
 happens. 
 */
 
-abstract class Shapex {
+abstract class Shapex_3 {
 	void draw() { 
 		System.out.println(this + ".draw()"); 
 	}
 	abstract public String toString();
 }
-class Circlex extends Shapex {
+class Circlex_3 extends Shapex_3 {
 	public String toString() { 
 		return "Circlex"; 
 	}
 }
-class Squarex extends Shapex {
+class Squarex_3 extends Shapex_3 {
 	public String toString() {
 		return "Squarex"; 
 	}
 }
-class Trianglex extends Shapex {
+class Trianglex_3 extends Shapex_3 {
 	public String toString() { 
 		return "Trianglex"; 
 	}
 }
-class Rhomboid extends Shapex {
+class Rhomboid_3 extends Shapex_3 {
 	public String toString() { 
 		return "Rhomboid"; 
 	}
 }
 public class Zad14_3 {
 	public static void main(String[] args) {
-		List<Shapex> shapeList = Arrays.asList(new Circlex(), new Squarex(), new Trianglex(), new Rhomboid());
-		for(Shapex shape : shapeList)
+		List<Shapex_3> shapeList = Arrays.asList(new Circlex_3(), new Squarex_3(), new Trianglex_3(), new Rhomboid_3());
+		for(Shapex_3 shape : shapeList)
 			shape.draw();
-		Rhomboid romb = new Rhomboid();
-		Shapex shape = romb; // upcasting
-		Rhomboid rs = (Rhomboid) shape; // downcasting do rombu
+		Rhomboid_3 romb = new Rhomboid_3();
+		Shapex_3 shape = romb; // upcasting
+		Rhomboid_3 rs = (Rhomboid_3) shape; // downcasting do rombu
 		rs.draw(); // draw
-		Circlex cl = (Circlex) shape; // downcasting rombu do circle, BLEDNIE WYKONANY
+		Circlex_3 cl = (Circlex_3) shape; // downcasting rombu do circle, BLEDNIE WYKONANY
 		cl.draw(); // nie wykona się bo wyjdzie wyjątek ClassCastException, czyli to co oczekiwało cwiczenie, w javie kazdy cast jest sprawdzany w runtime i to jest wlasnie RTTI
 	}
 }

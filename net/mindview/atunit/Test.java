@@ -1,4 +1,4 @@
-//: net/mindview/atunit/Test.java
+//: net/mindview/atunit/Test_2.java
 // The @Test tag.
 package net.mindview.atunit;
 import java.lang.annotation.*;

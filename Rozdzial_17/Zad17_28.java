@@ -12,11 +12,11 @@ equals() - sprawdza, czy dwa Tuple mają takie same wartości pól.
 hashCode() - pozwala używać Tuple jako kluczy w HashMap/elementów w HashSet.
 compareTo() - pozwala porównywać/sortować Tuple według pól po kolei.
 */
-class TwoTuple<A extends Comparable<A>,B extends Comparable<B>> implements Comparable<TwoTuple<A,B>>{
+class TwoTuple_1<A extends Comparable<A>,B extends Comparable<B>> implements Comparable<TwoTuple_1<A,B>>{
     //first i second są public final bo Tuple jest prostym obiektem do trzymania danych
     public final A first;
     public final B second;
-    public TwoTuple(A a, B b) {
+    public TwoTuple_1(A a, B b) {
         first = a;
         second = b;
     }
@@ -35,11 +35,11 @@ class TwoTuple<A extends Comparable<A>,B extends Comparable<B>> implements Compa
         //getClass() sprawia,że TwoTuple porównuje się tylko z TwoTuple,
         //a nie np z threeTuple mimo że dziedziczy po TwoTuple
         return o != null && getClass() == o.getClass()&&
-            first.equals(((TwoTuple)o).first) &&
-                second.equals(((TwoTuple)o).second);
+            first.equals(((TwoTuple_1)o).first) &&
+                second.equals(((TwoTuple_1)o).second);
     }
     @Override
-    public int compareTo(TwoTuple<A,B> a) {
+    public int compareTo(TwoTuple_1<A,B> a) {
         //porównanie argumentów pomiędzy sobą, jeżeli first są równe to sprawdza second
         int firstComp = first.compareTo(a.first);
            if(firstComp != 0)
@@ -47,7 +47,7 @@ class TwoTuple<A extends Comparable<A>,B extends Comparable<B>> implements Compa
         return second.compareTo(a.second);
     }
 }
-class ThreeTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>> extends TwoTuple<A,B>{
+class ThreeTuple_1<A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>> extends TwoTuple_1<A,B>{
     public final C third;
     public int hashCode() {
         //third ma trzy pola więc hashCode uwzględnia first, second i third
@@ -60,15 +60,15 @@ class ThreeTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Compa
     public boolean equals(Object o) {
         //porównuje tylko z ta samą klasą, czyli z ThreeTuple
         return o != null && getClass() == o.getClass()&&
-                first.equals(((ThreeTuple)o).first) &&
-                second.equals(((ThreeTuple)o).second)&&
-                third.equals(((ThreeTuple)o).third);
+                first.equals(((ThreeTuple_1)o).first) &&
+                second.equals(((ThreeTuple_1)o).second)&&
+                third.equals(((ThreeTuple_1)o).third);
     }
-    public ThreeTuple(A a, B b, C c) {
+    public ThreeTuple_1(A a, B b, C c) {
         super(a, b); // first i second ustawia konstruktor TwoTuple
         third = c; // dodano third tuple
     }
-    public int compareTo(ThreeTuple<A,B,C> a) {
+    public int compareTo(ThreeTuple_1<A,B,C> a) {
         int firstComp = first.compareTo(a.first);
         int secComp = second.compareTo(a.second);
         if(firstComp != 0)
@@ -81,9 +81,9 @@ class ThreeTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Compa
         return "(" + first + ", " + second + ", " + third +")";
     }
 }
-class FourTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>,D extends Comparable<D>> extends ThreeTuple<A,B,C> {
+class FourTuple_1<A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>,D extends Comparable<D>> extends ThreeTuple_1<A,B,C> {
     public final D fourth;
-    public FourTuple(A a, B b, C c, D d) {
+    public FourTuple_1(A a, B b, C c, D d) {
         super(a, b, c);
         fourth = d;
     }
@@ -97,16 +97,16 @@ class FourTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Compar
     }
     public boolean equals(Object o) {
         return o != null && getClass() == o.getClass() &&
-                first.equals(((FourTuple)o).first) &&
-                second.equals(((FourTuple)o).second) &&
-                third.equals(((FourTuple)o).third) &&
-                fourth.equals(((FourTuple)o).fourth);
+                first.equals(((FourTuple_1)o).first) &&
+                second.equals(((FourTuple_1)o).second) &&
+                third.equals(((FourTuple_1)o).third) &&
+                fourth.equals(((FourTuple_1)o).fourth);
     }
     public String toString() {
         return "(" + first + ", " + second + ", " +
                 third + ", " + fourth + ")";
     }
-    public int compareTo(FourTuple<A,B,C,D> a) {
+    public int compareTo(FourTuple_1<A,B,C,D> a) {
         int firstComp = first.compareTo(a.first);
         int secComp = second.compareTo(a.second);
         int thiComp = third.compareTo(a.third);
@@ -119,9 +119,9 @@ class FourTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Compar
         return fourth.compareTo(a.fourth);
     }
 }
-class FiveTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>,D extends Comparable<D>,E extends Comparable<E>> extends FourTuple<A,B,C,D> {
+class FiveTuple_1<A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>,D extends Comparable<D>,E extends Comparable<E>> extends FourTuple_1<A,B,C,D> {
     public final E fifth;
-    public FiveTuple(A a, B b, C c, D d, E e) {
+    public FiveTuple_1(A a, B b, C c, D d, E e) {
         super(a, b, c, d);
         fifth = e;
     }
@@ -136,13 +136,13 @@ class FiveTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Compar
     }
     public boolean equals(Object o) {
         return o != null && getClass() == o.getClass() &&
-                first.equals(((FiveTuple)o).first) &&
-                second.equals(((FiveTuple)o).second) &&
-                third.equals(((FiveTuple)o).third) &&
-                fourth.equals(((FiveTuple)o).fourth) &&
-                fifth.equals(((FiveTuple)o).fifth);
+                first.equals(((FiveTuple_1)o).first) &&
+                second.equals(((FiveTuple_1)o).second) &&
+                third.equals(((FiveTuple_1)o).third) &&
+                fourth.equals(((FiveTuple_1)o).fourth) &&
+                fifth.equals(((FiveTuple_1)o).fifth);
     }
-    public int compareTo(FiveTuple<A,B,C,D,E> a) {
+    public int compareTo(FiveTuple_1<A,B,C,D,E> a) {
         int firstComp = first.compareTo(a.first);
         int secComp = second.compareTo(a.second);
         int thiComp = third.compareTo(a.third);
@@ -165,34 +165,34 @@ class FiveTuple<A extends Comparable<A>,B extends Comparable<B>,C extends Compar
 }
 public class Zad17_28 {
 
-    public static <A extends Comparable<A>,B extends Comparable<B>> TwoTuple<A,B> tuple(A a, B b) {
-        return new TwoTuple<A,B>(a, b);
+    public static <A extends Comparable<A>,B extends Comparable<B>> TwoTuple_1<A,B> tuple(A a, B b) {
+        return new TwoTuple_1<A,B>(a, b);
     }
-    public static <A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>> ThreeTuple<A,B,C> tuple(A a, B b, C c) {
-        return new ThreeTuple<A,B,C>(a, b, c);
+    public static <A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>> ThreeTuple_1<A,B,C> tuple(A a, B b, C c) {
+        return new ThreeTuple_1<A,B,C>(a, b, c);
     }
-    public static <A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>,D extends Comparable<D>> FourTuple<A,B,C,D> tuple(A a, B b, C c, D d) {
-        return new FourTuple<A,B,C,D>(a, b, c, d);
+    public static <A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>,D extends Comparable<D>> FourTuple_1<A,B,C,D> tuple(A a, B b, C c, D d) {
+        return new FourTuple_1<A,B,C,D>(a, b, c, d);
     }
-    public static <A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>,D extends Comparable<D>,E extends Comparable<E>> FiveTuple<A,B,C,D,E> tuple(A a, B b, C c, D d, E e) {
-        return new FiveTuple<A,B,C,D,E>(a, b, c, d, e);
+    public static <A extends Comparable<A>,B extends Comparable<B>,C extends Comparable<C>,D extends Comparable<D>,E extends Comparable<E>> FiveTuple_1<A,B,C,D,E> tuple(A a, B b, C c, D d, E e) {
+        return new FiveTuple_1<A,B,C,D,E>(a, b, c, d, e);
     }
 
 
     public static void main(String[] args) {
         Random rand = new Random();
-        Map<TwoTuple<Integer,Integer>,Integer> map =
-                new HashMap<TwoTuple<Integer,Integer>,Integer>();
-        Map<TwoTuple<Integer,Integer>,Integer> map2 =
-                new HashMap<TwoTuple<Integer,Integer>,Integer>();
-        TwoTuple<Integer,Integer>[] k = new TwoTuple[5];
+        Map<TwoTuple_1<Integer,Integer>,Integer> map =
+                new HashMap<TwoTuple_1<Integer,Integer>,Integer>();
+        Map<TwoTuple_1<Integer,Integer>,Integer> map2 =
+                new HashMap<TwoTuple_1<Integer,Integer>,Integer>();
+        TwoTuple_1<Integer,Integer>[] k = new TwoTuple_1[5];
         for(int i = 0; i < k.length; i++) {
-            k[i] = new TwoTuple<Integer,Integer>(rand.nextInt(10),rand.nextInt(10));
+            k[i] = new TwoTuple_1<Integer,Integer>(rand.nextInt(10),rand.nextInt(10));
             map.put(k[i], i);
         }
         println("\n5 losowych Tuple dodane do mapy: " + map);
         for(int i = 0; i < k.length; i++) {
-            k[i] = new TwoTuple<Integer,Integer>(2,3);
+            k[i] = new TwoTuple_1<Integer,Integer>(2,3);
             map2.put(k[i], i);
         }
         //map 2 pokazuje że takie same tuple nadpisują wartość, czyli equals i hashCode działa

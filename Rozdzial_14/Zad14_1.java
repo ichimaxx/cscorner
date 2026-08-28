@@ -5,20 +5,20 @@ import java.lang.reflect.*; // potrzebny zeby uzyc nowej metody newInstance(), t
 /*Exercise 1: (1) In ToyTest.java, comment out Toy’s default constructor and explain
 what happens. */
 
-interface HasBatteries {}
+interface HasBatteries_2 {}
 
-interface Waterproof {}
+interface Waterproof_2 {}
 
-interface Shoots {}
+interface Shoots_2 {}
 
-class Toy {
+class Toy_2 {
 	// Comment out the following default constructor
 	// to see NoSuchMethodError from (*1*)
 	//Toy() {}
-	Toy(int i) {}
+	Toy_2(int i) {}
 }
-class FancyToy extends Toy implements HasBatteries, Waterproof, Shoots {
-	FancyToy() { 
+class FancyToy_2 extends Toy_2 implements HasBatteries_2, Waterproof_2, Shoots_2 {
+	FancyToy_2() {
 		super(1); 
 	}
 }

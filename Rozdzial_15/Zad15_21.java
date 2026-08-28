@@ -9,12 +9,12 @@ a method createNew(String typename). createNew( ) will either produce a new
 instance of the class associated with its argument string, or produce an error message.
  */
 
-class Building {
+class Building_2 {
     public String toString() {
         return "Empire State Building";
     }
 }
-class House extends Building {
+class House_2 extends Building_2 {
     public String toString() {
         return "Empire State House";
     }
@@ -39,14 +39,14 @@ public class Zad15_21<T> {
         println(boss.get(typename).getDeclaredConstructor().newInstance()); // jeśli w mapie istnieje podany typename, to pobiera skojarzony z nim obiekt Class<?> i tworzy nową instancję tej klasy, używmay reflection ponieważ mapa przechowuje obiekty Class<?> i na ich podstawie tworzymy nowe instancje, po erasure nie można robić new T() wiec trzeba to kompensować przez type tag, czyli jawnie przekazywać obiekt dla danego typu
         }
     public static void main(String[] args) throws Exception {
-        Zad15_21<Building> ctt1 = new Zad15_21<Building>(Building.class);
-        System.out.println(ctt1.f(new Building()));
-        System.out.println(ctt1.f(new House()));
-        Zad15_21<House> ctt2 = new Zad15_21<House>(House.class);
-        System.out.println(ctt2.f(new Building()));
-        System.out.println(ctt2.f(new House()));
-        ctt1.addTyper("House", House.class);
-        ctt1.addTyper("Building", Building.class);
+        Zad15_21<Building_2> ctt1 = new Zad15_21<Building_2>(Building_2.class);
+        System.out.println(ctt1.f(new Building_2()));
+        System.out.println(ctt1.f(new House_2()));
+        Zad15_21<House_2> ctt2 = new Zad15_21<House_2>(House_2.class);
+        System.out.println(ctt2.f(new Building_2()));
+        System.out.println(ctt2.f(new House_2()));
+        ctt1.addTyper("House", House_2.class);
+        ctt1.addTyper("Building", Building_2.class);
         ctt1.createNew("House");
         ctt1.createNew("Building");
         ctt1.createNew("INNE");

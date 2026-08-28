@@ -2,7 +2,8 @@ import static myutils.Skrocenie_Print.*;
 
 class Outers {
 	public void outers() {}
-	Zad10_11.Wewo g = new Zad10_11.Wewo();
+	//po odkomentowaniu poniższej linijki, program się nie skompiluje
+	//Zad10_11.Wewo g = new Zad10_11.Wewo();
 }
 
 public class Zad10_11 extends Outers {

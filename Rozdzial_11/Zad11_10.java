@@ -1,12 +1,12 @@
 import static myutils.Skrocenie_Print.*;
 import java.util.*; 
 
-enum Sound {
+enum Sound_6 {
 	MEEP, EEP, SQUEAK;
 }
 
-class Rodent {
-	void voice(Sound s) {
+class Rodent_6 {
+	void voice(Sound_6 s) {
 		println("Rodent.sound()" + s);
 	}
 	String what() {
@@ -21,10 +21,10 @@ class Rodent {
 	}
 }
 
-class Hamster extends Rodent {
+class Hamster_6 extends Rodent_6 {
 	@Override
-	void voice(Sound s) {
-		println("Hamster.sound() is " + Sound.SQUEAK);
+	void voice(Sound_6 s) {
+		println("Hamster.sound() is " + Sound_6.SQUEAK);
 	}
 	@Override
 	String what() {
@@ -37,10 +37,10 @@ class Hamster extends Rodent {
 	}
 }
 
-class Gerbilz extends Rodent {
+class Gerbil_6 extends Rodent_6 {
 	@Override
-	void voice(Sound s) {
-		println("Gerbil.sound() is " + Sound.EEP);
+	void voice(Sound_6 s) {
+		println("Gerbil.sound() is " + Sound_6.EEP);
 	}
 	@Override
 	String what() {
@@ -52,10 +52,10 @@ class Gerbilz extends Rodent {
 	}
 }	
 
-class Mouse extends Rodent {
+class Mouse_6 extends Rodent_6 {
 	@Override
-	void voice(Sound s) {
-		println("Mouse.sound() is " + Sound.MEEP);
+	void voice(Sound_6 s) {
+		println("Mouse.sound() is " + Sound_6.MEEP);
 	}
 	@Override
 	String what() {
@@ -69,27 +69,27 @@ class Mouse extends Rodent {
 
 public class Zad11_10 {	
 
-	public static ArrayList<Rodent> arrayList(int size) {
-		return new ArrayList<Rodent>(size);
+	public static ArrayList<Rodent_6> arrayList(int size) {
+		return new ArrayList<Rodent_6>(size);
 	}
 	
-	public static void mix(Rodent r) {
+	public static void mix(Rodent_6 r) {
 		print(r);
 		r.toy();
-		r.voice(Sound.MEEP);
+		r.voice(Sound_6.MEEP);
 	}
-	public static void mixAll(Iterator<Rodent> rodentz) {
+	public static void mixAll(Iterator<Rodent_6> rodentz) {
 		while (rodentz.hasNext()) {
-            Rodent r = rodentz.next();
+			Rodent_6 r = rodentz.next();
 				mix(r);
         }
 	}
 	public static void main(String[] args) {
-		ArrayList<Rodent> rodents = arrayList(3); 
-		rodents.add(new Hamster());
-		rodents.add(new Gerbilz());
-		rodents.add(new Mouse());
-		Iterator<Rodent> it = rodents.iterator();
+		ArrayList<Rodent_6> rodents = arrayList(3);
+		rodents.add(new Hamster_6());
+		rodents.add(new Gerbil_6());
+		rodents.add(new Mouse_6());
+		Iterator<Rodent_6> it = rodents.iterator();
 		mixAll(it);
 	}
 }

@@ -4,46 +4,46 @@ interface FastFood {
 	void fastfood();
 }
 
-class Meal {
-	Meal() {
+class Meal_2 {
+	Meal_2() {
 		println("Meal()"); 
 	}
 }
-class Bread {
-	Bread() {
+class Bread_2 {
+	Bread_2() {
 		println("Bread()"); 
 	}
 }
-class Cheese {
-	Cheese() {
+class Cheese_2 {
+	Cheese_2() {
 		println("Cheese()");
 	}
 }
-class Lettuce {
-	Lettuce() { 
+class Lettuce_2 {
+	Lettuce_2() {
 		println("Lettuce()"); 
 	}
 }
-class Pickle {
-	Pickle() {
+class Pickle_2 {
+	Pickle_2() {
 		println("Pickle()");
 	}
 }
-class Lunch extends Meal {
-	Lunch() { 
+class Lunch_2 extends Meal_2 {
+	Lunch_2() {
 		println("Lunch()"); 
 	}
 }
-class PortableLunch extends Lunch {
-	PortableLunch() { 
+class PortableLunch_2 extends Lunch_2 {
+	PortableLunch_2() {
 		println("PortableLunch()");
 	}
 }
-public class Zad9_8 extends PortableLunch implements FastFood {
-	private Bread b = new Bread();
-	private Cheese c = new Cheese();
-	private Lettuce l = new Lettuce();
-	private Pickle p = new Pickle();
+public class Zad9_8 extends PortableLunch_2 implements FastFood {
+	private Bread_2 b = new Bread_2();
+	private Cheese_2 c = new Cheese_2();
+	private Lettuce_2 l = new Lettuce_2();
+	private Pickle_2 p = new Pickle_2();
 	public Zad9_8() { 
 		println("Sandwich()");
 	}

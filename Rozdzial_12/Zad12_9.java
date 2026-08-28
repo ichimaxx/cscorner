@@ -4,27 +4,27 @@ import static myutils.Skrocenie_Print.*;
 throws all three. In main( ), call the method but only use a single catch clause that will
 catch all three types of exceptions. 
 */
-class Wyjatek1 extends Exception {
-	public Wyjatek1(String msgs) {
+class Wyjatek1_2 extends Exception {
+	public Wyjatek1_2(String msgs) {
 		super(msgs);
 	}
 }
-class Wyjatek2 extends Exception {
-	public Wyjatek2(String msg) {
+class Wyjatek2_2 extends Exception {
+	public Wyjatek2_2(String msg) {
 		super(msg);
 	}
 }
-class Wyjatek3 extends Exception {
-	public Wyjatek3(String msgg) {
+class Wyjatek3_2 extends Exception {
+	public Wyjatek3_2(String msgg) {
 		super(msgg);
 	}
 }
 public class Zad12_9 {
-	public void test(int los) throws Wyjatek1, Wyjatek2, Wyjatek3 { 
+	public void test(int los) throws Wyjatek1_2, Wyjatek2_2, Wyjatek3_2 {
 		switch(los) {
-			case 1 -> throw new Wyjatek1("pierwszy exception");
-			case 2 -> throw new Wyjatek2("drugi exception");
-			case 3 -> throw new Wyjatek3("trzeci exception");
+			case 1 -> throw new Wyjatek1_2("pierwszy exception");
+			case 2 -> throw new Wyjatek2_2("drugi exception");
+			case 3 -> throw new Wyjatek3_2("trzeci exception");
 			default -> println("brak wyjatku");
 		} // NIE MOZNA RZUCAC TRZECH WYJATKOW W JEDNEJ METODZIE POD RZAD WIEC UZYLEM SWITCHA ZEBY MOZNA BYLO WRZUCIC WSZYSTKIE
 	}

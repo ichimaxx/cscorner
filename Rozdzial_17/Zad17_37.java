@@ -6,10 +6,10 @@ import static myutils.Skrocenie_Print.println;
 Exercise 37: (2) Modify SimpleHashMap to use ArrayLists instead of LinkedLists.
 Modify MapPerformance.java to compare the performance of the two implementations.
 */
-class MapEntry<K,V> implements Map.Entry<K,V> {
+class MapEntry_8<K,V> implements Map.Entry<K,V> {
     private K key;
     private V value;
-    public MapEntry(K key, V value) {
+    public MapEntry_8(K key, V value) {
         this.key = key;
         this.value = value;
     }
@@ -25,8 +25,8 @@ class MapEntry<K,V> implements Map.Entry<K,V> {
                 (value==null ? 0 : value.hashCode());
     }
     public boolean equals(Object o) {
-        if(!(o instanceof MapEntry)) return false;
-        MapEntry me = (MapEntry)o;
+        if(!(o instanceof MapEntry_8)) return false;
+        MapEntry_8 me = (MapEntry_8)o;
         return
                 (key == null ?
                         me.getKey() == null : key.equals(me.getKey())) &&
@@ -38,19 +38,19 @@ class MapEntry<K,V> implements Map.Entry<K,V> {
 class SimpleHashMapArrayList<K,V> extends AbstractMap<K,V> {
     static final int SIZE = 997;
     @SuppressWarnings("unchecked")
-    ArrayList<MapEntry<K,V>>[] buckets =
+    ArrayList<MapEntry_8<K,V>>[] buckets =
             new ArrayList[SIZE];
     public V put(K key, V value) {
         V oldValue = null;
         int index = Math.abs(key.hashCode()) % SIZE;
         if(buckets[index] == null)
-            buckets[index] = new ArrayList<MapEntry<K,V>>();
-        ArrayList<MapEntry<K,V>> bucket = buckets[index];
-        MapEntry<K,V> pair = new MapEntry<K,V>(key, value);
+            buckets[index] = new ArrayList<MapEntry_8<K,V>>();
+        ArrayList<MapEntry_8<K,V>> bucket = buckets[index];
+        MapEntry_8<K,V> pair = new MapEntry_8<K,V>(key, value);
         boolean found = false;
-        ListIterator<MapEntry<K,V>> it = bucket.listIterator();
+        ListIterator<MapEntry_8<K,V>> it = bucket.listIterator();
         while(it.hasNext()) {
-            MapEntry<K,V> iPair = it.next();
+            MapEntry_8<K,V> iPair = it.next();
             if(iPair.getKey().equals(key)) {
                 oldValue = iPair.getValue();
                 it.set(pair); // Replace old with new
@@ -65,16 +65,16 @@ class SimpleHashMapArrayList<K,V> extends AbstractMap<K,V> {
     public V get(Object key) {
         int index = Math.abs(key.hashCode()) % SIZE;
         if(buckets[index] == null) return null;
-        for(MapEntry<K,V> iPair : buckets[index])
+        for(MapEntry_8<K,V> iPair : buckets[index])
             if(iPair.getKey().equals(key))
                 return iPair.getValue();
         return null;
     }
     public Set<Map.Entry<K,V>> entrySet() {
         Set<Map.Entry<K,V>> set= new HashSet<Map.Entry<K,V>>();
-        for(ArrayList<MapEntry<K,V>> bucket : buckets) {
+        for(ArrayList<MapEntry_8<K,V>> bucket : buckets) {
             if(bucket == null) continue;
-            for(MapEntry<K,V> mpair : bucket)
+            for(MapEntry_8<K,V> mpair : bucket)
                 set.add(mpair);
         }
         return set;
@@ -83,7 +83,7 @@ class SimpleHashMapArrayList<K,V> extends AbstractMap<K,V> {
         boolean flag = false;
         int index = Math.abs(key.hashCode()) % SIZE;
         if(buckets[index] != null) {
-            for (MapEntry<K, V> k : buckets[index]) {
+            for (MapEntry_8<K, V> k : buckets[index]) {
                 //pętla po bucket z index
                 if (k.getKey().equals(key))
                     //porównanie key z pętli do key z argumentu
@@ -97,7 +97,7 @@ class SimpleHashMapArrayList<K,V> extends AbstractMap<K,V> {
         boolean flag = false;
         for (int i = 0; i < SIZE; i++) {
             if (buckets[i] != null) {
-                for (MapEntry<K, V> k : buckets[i]) {
+                for (MapEntry_8<K, V> k : buckets[i]) {
                     //przechodzący po wszystkich bucketach, bo value nie da się znaleźć przez hashCode klucza(index)
                     if (k.getValue().equals(value)) {
                         //porównanie value z pętli do value z argumentu
@@ -115,11 +115,11 @@ class SimpleHashMapArrayList<K,V> extends AbstractMap<K,V> {
         //jeżeli pod tym indeksem nie ma listy, klucza nie ma na mapie (zwraca null)
         if (buckets[index] == null)
             return null;
-        ArrayList<MapEntry<K, V>> bucket = buckets[index];
-        ListIterator<MapEntry<K, V>> it = bucket.listIterator();
+        ArrayList<MapEntry_8<K, V>> bucket = buckets[index];
+        ListIterator<MapEntry_8<K, V>> it = bucket.listIterator();
         // iterator do usuwania par
         while (it.hasNext()) {
-            MapEntry<K, V> iPair = it.next();
+            MapEntry_8<K, V> iPair = it.next();
             if (iPair.getKey().equals(key)) {
                 //zapis w pamięci starej wartości klucza
                 V oldValue = iPair.getValue();
@@ -134,7 +134,7 @@ class SimpleHashMapArrayList<K,V> extends AbstractMap<K,V> {
         int z = 0;
         for (int i = 0; i < SIZE; i++) {
             if (buckets[i] != null) {
-                for(MapEntry<K,V> pair : buckets[i])
+                for(MapEntry_8<K,V> pair : buckets[i])
                     z++;
             }
         }
@@ -144,7 +144,7 @@ class SimpleHashMapArrayList<K,V> extends AbstractMap<K,V> {
         int z = 0;
         for (int i = 0; i < SIZE; i++) {
             if (buckets[i] != null) {
-                for(MapEntry<K,V> pair : buckets[i])
+                for(MapEntry_8<K,V> pair : buckets[i])
                     z++;
             }
         }
@@ -159,19 +159,19 @@ class SimpleHashMapArrayList<K,V> extends AbstractMap<K,V> {
 class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
     static final int SIZE = 997;
     @SuppressWarnings("unchecked")
-    LinkedList<MapEntry<K,V>>[] buckets =
+    LinkedList<MapEntry_8<K,V>>[] buckets =
             new LinkedList[SIZE];
     public V put(K key, V value) {
         V oldValue = null;
         int index = Math.abs(key.hashCode()) % SIZE;
         if(buckets[index] == null)
-            buckets[index] = new LinkedList<MapEntry<K,V>>();
-        LinkedList<MapEntry<K,V>> bucket = buckets[index];
-        MapEntry<K,V> pair = new MapEntry<K,V>(key, value);
+            buckets[index] = new LinkedList<MapEntry_8<K,V>>();
+        LinkedList<MapEntry_8<K,V>> bucket = buckets[index];
+        MapEntry_8<K,V> pair = new MapEntry_8<K,V>(key, value);
         boolean found = false;
-        ListIterator<MapEntry<K,V>> it = bucket.listIterator();
+        ListIterator<MapEntry_8<K,V>> it = bucket.listIterator();
         while(it.hasNext()) {
-            MapEntry<K,V> iPair = it.next();
+            MapEntry_8<K,V> iPair = it.next();
             if(iPair.getKey().equals(key)) {
                 oldValue = iPair.getValue();
                 it.set(pair); // Replace old with new
@@ -186,16 +186,16 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
     public V get(Object key) {
         int index = Math.abs(key.hashCode()) % SIZE;
         if(buckets[index] == null) return null;
-        for(MapEntry<K,V> iPair : buckets[index])
+        for(MapEntry_8<K,V> iPair : buckets[index])
             if(iPair.getKey().equals(key))
                 return iPair.getValue();
         return null;
     }
     public Set<Map.Entry<K,V>> entrySet() {
         Set<Map.Entry<K,V>> set= new HashSet<Map.Entry<K,V>>();
-        for(LinkedList<MapEntry<K,V>> bucket : buckets) {
+        for(LinkedList<MapEntry_8<K,V>> bucket : buckets) {
             if(bucket == null) continue;
-            for(MapEntry<K,V> mpair : bucket)
+            for(MapEntry_8<K,V> mpair : bucket)
                 set.add(mpair);
         }
         return set;
@@ -204,7 +204,7 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
         boolean flag = false;
         int index = Math.abs(key.hashCode()) % SIZE;
         if(buckets[index] != null) {
-            for (MapEntry<K, V> k : buckets[index]) {
+            for (MapEntry_8<K, V> k : buckets[index]) {
                 //pętla po bucket z index
                 if (k.getKey().equals(key))
                     //porównanie key z pętli do key z argumentu
@@ -218,7 +218,7 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
         boolean flag = false;
         for (int i = 0; i < SIZE; i++) {
             if (buckets[i] != null) {
-                for (MapEntry<K, V> k : buckets[i]) {
+                for (MapEntry_8<K, V> k : buckets[i]) {
                     //przechodzący po wszystkich bucketach, bo value nie da się znaleźć przez hashCode klucza(index)
                     if (k.getValue().equals(value)) {
                         //porównanie value z pętli do value z argumentu
@@ -236,11 +236,11 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
         //jeżeli pod tym indeksem nie ma listy, klucza nie ma na mapie (zwraca null)
         if (buckets[index] == null)
             return null;
-        LinkedList<MapEntry<K, V>> bucket = buckets[index];
-        ListIterator<MapEntry<K, V>> it = bucket.listIterator();
+        LinkedList<MapEntry_8<K, V>> bucket = buckets[index];
+        ListIterator<MapEntry_8<K, V>> it = bucket.listIterator();
         // iterator do usuwania par
         while (it.hasNext()) {
-            MapEntry<K, V> iPair = it.next();
+            MapEntry_8<K, V> iPair = it.next();
             if (iPair.getKey().equals(key)) {
                 //zapis w pamięci starej wartości klucza
                 V oldValue = iPair.getValue();
@@ -255,7 +255,7 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
         int z = 0;
         for (int i = 0; i < SIZE; i++) {
             if (buckets[i] != null) {
-                for(MapEntry<K,V> pair : buckets[i])
+                for(MapEntry_8<K,V> pair : buckets[i])
                     z++;
             }
         }
@@ -265,7 +265,7 @@ class SimpleHashMapLinkedList<K,V> extends AbstractMap<K,V> {
         int z = 0;
         for (int i = 0; i < SIZE; i++) {
             if (buckets[i] != null) {
-                for(MapEntry<K,V> pair : buckets[i])
+                for(MapEntry_8<K,V> pair : buckets[i])
                     z++;
             }
         }

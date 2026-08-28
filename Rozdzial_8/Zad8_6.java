@@ -4,11 +4,11 @@ Exercise 6: (1) Change Music3.java so that what( ) becomes the root Object metho
 toString( ). Try printing the Instrument objects using System.out.println( ) (without
 any casting).
 */
-enum Note {
+enum Note_5 {
 	MIDDLE_C, C_SHARP, B_FLAT;
 }
-class Instrument {
-	void play(Note n) { 
+class Instrument_5 {
+	void play(Note_5 n) {
 		println("Rozdzial_8.Instrument.play() " + n);
 	}
 	String what() { 
@@ -22,9 +22,9 @@ class Instrument {
 		print("Adjusting Rozdzial_8.Instrument");
 	}
 }
-class Wind extends Instrument {
+class Wind_5 extends Instrument_5 {
 	@Override
-	void play(Note n) { 
+	void play(Note_5 n) {
 		println("Rozdzial_8.Wind.play() " + n);
 	}
 	@Override
@@ -36,9 +36,9 @@ class Wind extends Instrument {
 		print("Adjusting Rozdzial_8.Wind");
 	}
 }
-class Percussion extends Instrument {
+class Percussion_5 extends Instrument_5 {
 	@Override
-	void play(Note n) { 
+	void play(Note_5 n) {
 		println("Rozdzial_8.Percussion.play() " + n);
 	}
 	@Override
@@ -50,9 +50,9 @@ class Percussion extends Instrument {
 		print("Adjusting Rozdzial_8.Percussion");
 	}
 }
-class Stringed extends Instrument { 
+class Stringed_5 extends Instrument_5 {
 	@Override
-	void play(Note n) { 
+	void play(Note_5 n) {
 		println("Rozdzial_8.Stringed.play() " + n);
 	}
 	@Override
@@ -64,9 +64,9 @@ class Stringed extends Instrument {
 		print("Adjusting Rozdzial_8.Stringed");
 	}
 }
-class Brass extends Wind {
+class Brass_5 extends Wind_5 {
 	@Override
-	void play(Note n) { 
+	void play(Note_5 n) {
 		println("Rozdzial_8.Brass.play() " + n);
 	}
 	@Override
@@ -74,9 +74,9 @@ class Brass extends Wind {
 		print("Adjusting Rozdzial_8.Brass");
 	}
 }
-class Woodwind extends Wind {
+class Woodwind_5 extends Wind_5 {
 	@Override
-	void play(Note n) { 
+	void play(Note_5 n) {
 		println("Rozdzial_8.Woodwind.play() " + n);
 	}
 	@Override
@@ -87,23 +87,23 @@ class Woodwind extends Wind {
 public class Zad8_6 {
  // Doesn’t care about type, so new types
  // added to the system still work right:
-	public static void tune(Instrument i) {
+	public static void tune(Instrument_5 i) {
 		println(i);
-		i.play(Note.MIDDLE_C);
+		i.play(Note_5.MIDDLE_C);
 		
 	}
-	public static void tuneAll(Instrument[] e) {
-		for(Instrument i : e)
+	public static void tuneAll(Instrument_5[] e) {
+		for(Instrument_5 i : e)
 			tune(i);
 	}
 	public static void main(String[] args) {
  // Upcasting during addition to the array:
-		Instrument[] orchestra = {
-			new Wind(),
-			new Percussion(),
-			new Stringed(),
-			new Brass(),
-			new Woodwind()
+		Instrument_5[] orchestra = {
+			new Wind_5(),
+			new Percussion_5(),
+			new Stringed_5(),
+			new Brass_5(),
+			new Woodwind_5()
 			};
 		tuneAll(orchestra);
 	}

@@ -4,7 +4,7 @@ Exercise 12: (3) Modify Exercise 9 so that it demonstrates the order of initiali
 the base classes and derived classes. Now add member objects to both the base and derived
 classes and show the order in which their initialization occurs during construction.
 */
-enum Sound {
+enum Sound_2 {
 	MEEP, EEP, SQUEAK;
 }
 class Odpalanie {
@@ -14,8 +14,8 @@ class Odpalanie {
 		println(f);
 	}
 }
-class Rodent{
-	void voice(Sound s) {
+class Rodent_4{
+	void voice(Sound_2 s) {
 		println("Rozdzial_8.Rodent.sound()" + s);
 	}
 	private Odpalanie o = new Odpalanie("klasa druga, rodent");
@@ -31,10 +31,10 @@ class Rodent{
 	}
 }
 
-class Hamster extends Rodent {
+class Hamster_4 extends Rodent_4 {
 	@Override
-	void voice(Sound s) {
-		println("Rozdzial_8.Hamster.sound() is " + Sound.SQUEAK);
+	void voice(Sound_2 s) {
+		println("Rozdzial_8.Hamster.sound() is " + Sound_2.SQUEAK);
 	}
 	private Odpalanie o = new Odpalanie("klasa trzecia, hamster");
 
@@ -49,10 +49,10 @@ class Hamster extends Rodent {
 	}
 }
 
-class Gerbil extends Rodent {
+class Gerbil_4 extends Rodent_4 {
 	@Override
-	void voice(Sound s) {
-		println("Rozdzial_8.Gerbil.sound() is " + Sound.EEP);
+	void voice(Sound_2 s) {
+		println("Rozdzial_8.Gerbil.sound() is " + Sound_2.EEP);
 	}
 	private Odpalanie o = new Odpalanie("klasa czwarta, gerbil");	
 	@Override
@@ -65,10 +65,10 @@ class Gerbil extends Rodent {
 	}
 }	
 
-class Mouse extends Rodent {
+class Mouse_4 extends Rodent_4 {
 	@Override
-	void voice(Sound s) {
-		println("Rozdzial_8.Mouse.sound() is " + Sound.MEEP);
+	void voice(Sound_2 s) {
+		println("Rozdzial_8.Mouse.sound() is " + Sound_2.MEEP);
 	}
 	private Odpalanie o = new Odpalanie("klasa piata, mouse");	
 	@Override
@@ -83,20 +83,20 @@ class Mouse extends Rodent {
 
 public class Zad8_12 {	
 	private static Odpalanie o = new Odpalanie("klasa ostatnia, publiczna zad8_12");
-	public static void mix(Rodent r) {
+	public static void mix(Rodent_4 r) {
 		print(r);
 		r.toy();
-		r.voice(Sound.MEEP);
+		r.voice(Sound_2.MEEP);
 	}
-	public static void mixAll(Rodent[] e) {
-		for(Rodent r : e)
+	public static void mixAll(Rodent_4[] e) {
+		for(Rodent_4 r : e)
 			mix(r);
 	}
 	public static void main(String[] args) {
-		Rodent[] g = {
-			new Hamster(),
-			new Gerbil(),
-			new Mouse()
+		Rodent_4[] g = {
+			new Hamster_4(),
+			new Gerbil_4(),
+			new Mouse_4()
 		};
 	mixAll(g);
 	}

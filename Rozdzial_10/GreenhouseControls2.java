@@ -1,7 +1,6 @@
 import controller.*;
-import static myutils.Skrocenie_Print.*;
 
-public class GreenhouseControls extends Controller {
+class GreenhouseControls_2 extends Controller {
 	private boolean light = false;
 	public class LightOn extends Event {
 		public LightOn(long delayTime) { super(delayTime); }
@@ -125,7 +124,7 @@ public class GreenhouseControls extends Controller {
 		}
 	}
 }
-class GreenhouseControls2 extends GreenhouseControls {
+public class GreenhouseControls2 extends GreenhouseControls_2 {
 		private boolean mist = false;
 		public class MistOn extends Event {
 			public MistOn(long delayTime) { super(delayTime); }

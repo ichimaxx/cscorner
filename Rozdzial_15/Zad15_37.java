@@ -35,12 +35,12 @@ class ColoredImp implements Colored { // dodana ColoredImp class
         return i;
     }
 }
-class BasicImp implements Basic {
+class BasicImp_2 implements Basic {
     private String value;
     public void set(String val) { value = val; }
     public String get() { return value; }
 }
-class Mixin extends BasicImp implements TimeStamped, SerialNumbered, Colored {
+class Mixin extends BasicImp_2 implements TimeStamped, SerialNumbered, Colored {
     private TimeStamped timeStamp = new TimeStampedImp();
     private Colored colored = new ColoredImp();
     private SerialNumbered serialNumber = new SerialNumberedImp(); public long getStamp() { return timeStamp.getStamp(); }

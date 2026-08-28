@@ -1,11 +1,11 @@
 import static myutils.Skrocenie_Print.*;
 
-enum Sound {
+enum Sound_5 {
 	MEEP, EEP, SQUEAK;
 }
 
-interface Rodent {
-	void voice(Sound s);
+interface Rodent_5 {
+	void voice(Sound_5 s);
 	
 	String what();
 	
@@ -14,10 +14,10 @@ interface Rodent {
 	public String toString();
 }
 
-class Hamster implements Rodent {
+class Hamster_5 implements Rodent_5 {
 	@Override
-	public void voice(Sound s) {
-		println("Hamster.sound() is " + Sound.SQUEAK);
+	public void voice(Sound_5 s) {
+		println("Hamster.sound() is " + Sound_5.SQUEAK);
 	}
 	@Override
 	public String what() {
@@ -34,10 +34,10 @@ class Hamster implements Rodent {
 	}
 }
 
-class Gerbil implements Rodent {
+class Gerbil_5 implements Rodent_5 {
 	@Override
-	public void voice(Sound s) {
-		println("Gerbil.sound() is " + Sound.EEP);
+	public void voice(Sound_5 s) {
+		println("Gerbil.sound() is " + Sound_5.EEP);
 	}
 	@Override
 	public String what() {
@@ -53,10 +53,10 @@ class Gerbil implements Rodent {
 	}
 }	
 
-class Mouse implements Rodent {
+class Mouse_5 implements Rodent_5 {
 	@Override
-	public void voice(Sound s) {
-		println("Mouse.sound() is " + Sound.MEEP);
+	public void voice(Sound_5 s) {
+		println("Mouse.sound() is " + Sound_5.MEEP);
 	}
 	@Override
 	public String what() {
@@ -73,20 +73,20 @@ class Mouse implements Rodent {
 }
 
 public class Zad9_7 {	
-	public static void mix(Rodent r) {
+	public static void mix(Rodent_5 r) {
 		print(r);
 		r.toy();
-		r.voice(Sound.MEEP);
+		r.voice(Sound_5.MEEP);
 	}
-	public static void mixAll(Rodent[] e) {
-		for(Rodent r : e)
+	public static void mixAll(Rodent_5[] e) {
+		for(Rodent_5 r : e)
 			mix(r);
 	}
 	public static void main(String[] args) {
-		Rodent[] g = {
-			new Hamster(),
-			new Gerbil(),
-			new Mouse()
+		Rodent_5[] g = {
+			new Hamster_5(),
+			new Gerbil_5(),
+			new Mouse_5()
 		};
 	mixAll(g);
 	}

@@ -9,13 +9,19 @@ class NewException  {
 } 
 
 class Przepust extends NewException {
+	Przepust() throws Exception {
+		super();
+	}
+	/*
+	//Wersja do sprawdzenia ćwiczenia:
 	Przepust() {
         try {
-            super(); 
+            super();
 		} catch (Exception e) {
             println("zlapane w Przepust: " + e.getMessage());
         }
     }
+	 */
 /* 
 	NIE ODPALI BO super(); MUSI BYĆ PIERWSZĄ INSTRUKCJĄ W KONSTRUKTORZE, JAK BEDZIE COŚ INNEGO JAK NP W TEJ SYTUACJI TRY() TO KOMPILATOR WYRZUCI BŁĄD:
         C:\Users\ichim\Desktop\cscorner\Rozdzial_12>javac Zad12_21.java
@@ -45,7 +51,7 @@ public class Zad12_21 {
 			println("catched: " + e.getMessage());
 		}
 */
-		new Przepust(); // TO ZADZIALA DOPIERO GDY PRZEPUST MA THROWS EXCEPTION PRZY SYTUACJI KTORA TERAZ JEST (TRY/CATCH W PRZEPUST) TO KOMPILATOR NAWET TU NIE DOJDZIE
+		//new Przepust(); // TO ZADZIALA DOPIERO GDY PRZEPUST MA THROWS EXCEPTION PRZY SYTUACJI KTORA TERAZ JEST (TRY/CATCH W PRZEPUST) TO KOMPILATOR NAWET TU NIE DOJDZIE
 	}
 }
 

@@ -48,10 +48,10 @@ class Animals extends LivingCreatures {
 		super.dispose();
 	}
 }
-class Amphibians extends Animals {
+class Amphibians_2 extends Animals {
 	private Characteristics p = new Characteristics("can live in water");
 	private Descriptions t = new Descriptions("Both water and land");
-	Amphibians() {
+	Amphibians_2() {
 		print("Amphibians()");
 	}
 	protected void dispose() {
@@ -61,7 +61,7 @@ class Amphibians extends Animals {
 		super.dispose();
 	}
 }
-public class Zad12_17 extends Amphibians {
+public class Zad12_17 extends Amphibians_2 {
 	private Characteristics p = new Characteristics("Croaks");
 	private Descriptions t = new Descriptions("Eats Bugs");
 	public Zad12_17() { 
